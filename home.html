@@ -1,0 +1,777 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>MONTRA - Smart Expense Tracking</title>
+
+    <!-- Google Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="home.css">
+</head>
+
+<body>
+
+    <header class="header">
+
+        <div class="container nav-container">
+
+            <!-- Logo -->
+            <a href="home.html" class="logo">
+               <img src="montra.jpg" alt="Montra logo">
+               <span>MONTRA</span>
+            </a>
+
+
+            <nav class="nav">
+
+                <a href="home.html" class="active">Home</a>
+
+                <a href="about.html">About</a>
+
+                <a href="contact.html">Contact</a>
+
+                <a href="login.html" class="get-started">
+                    Get Started
+                </a>
+
+            </nav>
+
+            <button class="menu-toggle" id="menuToggle" aria-label="Open navigation">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+
+        </div>
+
+    </header>
+
+
+
+    <div class="mobile-menu" id="mobileMenu">
+
+        <a href="home.html">Home</a>
+
+        <a href="about.html">About</a>
+
+        <a href="contact.html">Contact</a>
+
+        <a href="login.html" class="mobile-get-started">
+            Get Started
+        </a>
+
+    </div>
+
+
+
+
+    <main>
+
+        <section class="hero">
+
+            <div class="hero-background"></div>
+
+            <div class="container hero-container">
+
+                <!-- Hero Text -->
+
+                <div class="hero-content">
+
+                    <div class="small-label">
+                        Smart Expense Tracking
+                    </div>
+
+                    <h1>
+                        Take Control
+                        <br>
+                        of Your <span>Money</span>
+                    </h1>
+
+                    <p class="hero-description">
+                        Track your expenses. Understand your spending.
+                        Reach your financial goals.
+                    </p>
+
+                    <p class="hero-text">
+                        MONTRA makes it simple to record, organize,
+                        and monitor your everyday expenses in one place.
+                    </p>
+
+
+                    <div class="hero-buttons">
+
+                        <a href="login.html" class="btn btn-primary">
+                            Get Started
+                            <span>→</span>
+                        </a>
+
+                        <a href="#features" class="btn btn-secondary">
+                            Learn More
+                        </a>
+
+                    </div>
+
+                </div>
+
+
+                <!-- Hero Dashboard Preview -->
+
+                <div class="hero-preview">
+
+                    <div class="dashboard-preview">
+
+                        <!-- Mini Sidebar -->
+
+                        <div class="preview-sidebar">
+
+                            <div class="mini-logo">
+                                <span class="mini-logo-icon">◉</span>
+                                MONTRA
+                            </div>
+
+                            <div class="preview-menu active-menu">
+                                <span>▣</span>
+                                Dashboard
+                            </div>
+
+                            <div class="preview-menu">
+                                <span>◫</span>
+                                Expenses
+                            </div>
+
+                            <div class="preview-menu">
+                                <span>▥</span>
+                                Reports
+                            </div>
+
+                            <div class="preview-menu">
+                                <span>⚙</span>
+                                Settings
+                            </div>
+
+                        </div>
+
+
+
+                        <div class="preview-content">
+
+                            <div class="preview-top">
+
+                                <div>
+                                    <small>Total Balance</small>
+                                    <h3>₦125,000</h3>
+                                </div>
+
+                                <div class="chart-mini">
+                                    <div class="chart-line"></div>
+                                </div>
+
+                            </div>
+
+
+                            <div class="recent-title">
+                                Recent Expenses
+                            </div>
+
+
+                            <div class="expense-item">
+
+                                <div class="expense-icon food">
+                                    🍴
+                                </div>
+
+                                <div>
+                                    <strong>Food</strong>
+                                    <small>Today</small>
+                                </div>
+
+                                <span>₦5,000</span>
+
+                            </div>
+
+
+                            <div class="expense-item">
+
+                                <div class="expense-icon transport">
+                                    🚕
+                                </div>
+
+                                <div>
+                                    <strong>Transport</strong>
+                                    <small>Yesterday</small>
+                                </div>
+
+                                <span>₦3,000</span>
+
+                            </div>
+
+
+                            <div class="expense-item">
+
+                                <div class="expense-icon shopping">
+                                    🛍
+                                </div>
+
+                                <div>
+                                    <strong>Shopping</strong>
+                                    <small>Oct 04</small>
+                                </div>
+
+                                <span>₦12,000</span>
+
+                            </div>
+
+
+                            <div class="expense-item">
+
+                                <div class="expense-icon bills">
+                                    ▣
+                                </div>
+
+                                <div>
+                                    <strong>Bills</strong>
+                                    <small>Oct 02</small>
+                                </div>
+
+                                <span>₦6,500</span>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+
+        <section class="features section" id="features">
+
+            <div class="container">
+
+                <div class="section-heading">
+
+                    <div class="small-label">
+                        MONTRA FEATURES
+                    </div>
+
+                    <h2>
+                        Everything you need to
+                        <span>manage your expenses</span>
+                    </h2>
+
+                    <p>
+                        Simple tools to help you stay organized and
+                        make better financial decisions.
+                    </p>
+
+                </div>
+
+
+                <div class="feature-grid">
+
+
+                    <!-- Feature 1 -->
+
+                    <div class="feature-card">
+
+                        <div class="feature-icon">
+                            📊
+                        </div>
+
+                        <h3>Track Expenses</h3>
+
+                        <p>
+                            Keep a record of your daily spending
+                            and know exactly where your money goes.
+                        </p>
+
+                    </div>
+
+
+
+                    <div class="feature-card">
+
+                        <div class="feature-icon">
+                            🏷️
+                        </div>
+
+                        <h3>Organize Spending</h3>
+
+                        <p>
+                            Categorize your expenses into food,
+                            transport, shopping, bills and more.
+                        </p>
+
+                    </div>
+
+
+                    <!-- Feature 3 -->
+
+                    <div class="feature-card">
+
+                        <div class="feature-icon">
+                            📈
+                        </div>
+
+                        <h3>Understand Your Habits</h3>
+
+                        <p>
+                            Get a clear overview of your spending
+                            patterns and financial habits.
+                        </p>
+
+                    </div>
+
+
+                    <!-- Feature 4 -->
+
+                    <div class="feature-card">
+
+                        <div class="feature-icon">
+                            🔒
+                        </div>
+
+                        <h3>Keep Your Data Organized</h3>
+
+                        <p>
+                            Keep your expense records accessible
+                            and organized in one place.
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+
+        <section class="how-section section">
+
+            <div class="container">
+
+                <div class="section-heading">
+
+                    <div class="small-label">
+                        HOW IT WORKS
+                    </div>
+
+                    <h2>
+                        Managing your money
+                        <span>made simple</span>
+                    </h2>
+
+                    <p>
+                        Start tracking your expenses in just a few simple steps.
+                    </p>
+
+                </div>
+
+
+                <div class="steps">
+
+
+                    <div class="step">
+
+                        <div class="step-number">
+                            01
+                        </div>
+
+                        <div class="step-line"></div>
+
+                        <h3>Create Your Account</h3>
+
+                        <p>
+                            Sign up and create your personal
+                            MONTRA account.
+                        </p>
+
+                    </div>
+
+
+                    <div class="step">
+
+                        <div class="step-number">
+                            02
+                        </div>
+
+                        <div class="step-line"></div>
+
+                        <h3>Add Your Expenses</h3>
+
+                        <p>
+                            Record your expenses and categorize
+                            each transaction.
+                        </p>
+
+                    </div>
+
+
+                    <div class="step">
+
+                        <div class="step-number">
+                            03
+                        </div>
+
+                        <div class="step-line"></div>
+
+                        <h3>Understand Your Spending</h3>
+
+                        <p>
+                            View your spending and make smarter
+                            financial decisions.
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+
+        <section class="overview-section section">
+
+            <div class="container overview-container">
+
+
+                <div class="overview-content">
+
+                    <div class="small-label">
+                        YOUR MONEY AT A GLANCE
+                    </div>
+
+                    <h2>
+                        See where your money
+                        <span>really goes.</span>
+                    </h2>
+
+                    <p>
+                        MONTRA gives you a simple overview of your
+                        spending so you can understand your financial
+                        habits without complicated spreadsheets.
+                    </p>
+
+
+                    <div class="check-list">
+
+                        <div>
+                            <span>✓</span>
+                            Track your daily expenses
+                        </div>
+
+                        <div>
+                            <span>✓</span>
+                            Organize expenses by category
+                        </div>
+
+                        <div>
+                            <span>✓</span>
+                            Monitor your spending patterns
+                        </div>
+
+                        <div>
+                            <span>✓</span>
+                            Make better financial decisions
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+               
+
+                <div class="spending-card">
+
+                    <div class="spending-header">
+
+                        <div>
+                            <small>Monthly Spending</small>
+
+                            <h3>₦45,500</h3>
+                        </div>
+
+                        <span class="percentage">
+                            +8.2%
+                        </span>
+
+                    </div>
+
+
+                    <div class="big-chart">
+
+                        <div class="chart-bars">
+
+                            <span style="height:35%"></span>
+                            <span style="height:50%"></span>
+                            <span style="height:40%"></span>
+                            <span style="height:65%"></span>
+                            <span style="height:55%"></span>
+                            <span style="height:80%"></span>
+                            <span style="height:70%"></span>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="category-list">
+
+                        <div>
+                            <span class="dot food-dot"></span>
+                            Food
+                            <strong>35%</strong>
+                        </div>
+
+                        <div>
+                            <span class="dot transport-dot"></span>
+                            Transport
+                            <strong>20%</strong>
+                        </div>
+
+                        <div>
+                            <span class="dot shopping-dot"></span>
+                            Shopping
+                            <strong>15%</strong>
+                        </div>
+
+                        <div>
+                            <span class="dot bills-dot"></span>
+                            Bills
+                            <strong>20%</strong>
+                        </div>
+
+                        <div>
+                            <span class="dot other-dot"></span>
+                            Others
+                            <strong>10%</strong>
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+
+        <section class="benefits section">
+
+            <div class="container">
+
+                <div class="benefits-box">
+
+                    <div class="benefits-image">
+
+                        <div class="image-overlay">
+
+                            <div class="quote">
+                                "A better understanding
+                                of your spending leads
+                                to better decisions."
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="benefits-content">
+
+                        <div class="small-label">
+                            WHY MONTRA?
+                        </div>
+
+                        <h2>
+                            Built to make
+                            <span>money management easier.</span>
+                        </h2>
+
+                        <p>
+                            Whether you're a student, professional,
+                            or simply trying to improve your financial
+                            habits, MONTRA helps you stay organized.
+                        </p>
+
+
+                        <div class="benefit-list">
+
+                            <div class="benefit-item">
+
+                                <div class="benefit-icon">
+                                    ✓
+                                </div>
+
+                                <div>
+                                    <h4>Simple</h4>
+                                    <p>
+                                        Easy-to-understand interface.
+                                    </p>
+                                </div>
+
+                            </div>
+
+
+                            <div class="benefit-item">
+
+                                <div class="benefit-icon">
+                                    ✓
+                                </div>
+
+                                <div>
+                                    <h4>Organized</h4>
+                                    <p>
+                                        Keep your expenses in one place.
+                                    </p>
+                                </div>
+
+                            </div>
+
+
+                            <div class="benefit-item">
+
+                                <div class="benefit-icon">
+                                    ✓
+                                </div>
+
+                                <div>
+                                    <h4>Accessible</h4>
+                                    <p>
+                                        Track your spending whenever you need.
+                                    </p>
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+     
+
+        <section class="cta-section">
+
+            <div class="container">
+
+                <div class="cta-content">
+
+                    <div class="small-label">
+                        GET STARTED TODAY
+                    </div>
+
+                    <h2>
+                        Ready to take control
+                        of your spending?
+                    </h2>
+
+                    <p>
+                        Start organizing your expenses and
+                        build better financial habits with MONTRA.
+                    </p>
+
+                    <a href="login.html" class="btn btn-white">
+                        Get Started
+                        <span>→</span>
+                    </a>
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+
+    <footer class="footer">
+
+        <div class="container footer-container">
+
+
+            <div class="footer-brand">
+
+                <a href="home.html" class="logo footer-logo">
+
+                    <img src="montra.jpg" alt="Montra logo">
+
+                    MONTRA
+
+                </a>
+
+                <p>
+                    Simple expense tracking for
+                    smarter financial decisions.
+                </p>
+
+            </div>
+
+
+            <div class="footer-links">
+
+                <div>
+                    <a href="index.html">Home</a>
+                    <a href="about.html">About</a>
+                    <a href="contact.html">Contact</a>
+                </div>
+
+            </div>
+
+
+            <div class="social-links">
+
+                <a href="#">f</a>
+                <a href="#">𝕏</a>
+                <a href="#">◎</a>
+                <a href="#">in</a>
+
+            </div>
+
+        </div>
+
+
+        <div class="footer-bottom">
+
+            <div class="container">
+
+                <p>
+                    © 2026 MONTRA. All rights reserved.
+                </p>
+
+            </div>
+
+        </div>
+
+    </footer>
+
+</body>
+</html>
