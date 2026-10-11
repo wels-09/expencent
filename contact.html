@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Contact Us | Montra</title>
+    <meta name="description" content="Get in touch with Montra. We are here to help with your expense tracking questions and feedback.">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="contact.css">
+</head>
+
+<body>
+
+    <!-- SECTION 1: HEADER + CONTACT HERO -->
+    <header class="header">
+        <div class="container nav-container">
+
+            <a href="home.html" class="logo">
+                <img src="montra.jpg" alt="Montra logo">
+                <span>Montra</span>
+            </a>
+
+            <nav class="nav" id="desktopNav">
+                <a href="home.html">Home</a>
+                <a href="about.html">About</a>
+                <a href="contact.html" class="active">Contact</a>
+                <a href="login.html" class="nav-cta">Get Started</a>
+            </nav>
+
+            <button
+                class="menu-toggle"
+                id="menuToggle"
+                aria-label="Toggle navigation"
+                aria-expanded="false"
+                aria-controls="mobileMenu"
+                type="button"
+            >
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+
+        <nav class="mobile-menu" id="mobileMenu" aria-label="Mobile navigation">
+            <a href="home.html">Home</a>
+            <a href="about.html">About</a>
+            <a href="contact.html" class="active">Contact</a>
+            <a href="login.html" class="mobile-cta">Get Started</a>
+        </nav>
+    </header>
+
+    <main>
+        <section class="contact-hero">
+            <div class="hero-decoration decoration-one"></div>
+            <div class="hero-decoration decoration-two"></div>
+
+            <div class="container hero-content">
+                <span class="eyebrow">WE'RE HERE TO HELP</span>
+
+                <h1>
+                    Let's talk about
+                    <span>your finances.</span>
+                </h1>
+
+                <p>
+                    Have a question, suggestion, or feedback about Montra?
+                    We'd love to hear from you. Send us a message and
+                    let's make managing your expenses easier.
+                </p>
+            </div>
+        </section>
+
+
+        <!-- SECTION 2: CONTACT DETAILS + FORM -->
+        <section class="contact-section" id="contact-form">
+            <div class="container contact-grid">
+
+                <div class="contact-info">
+                    <span class="eyebrow">GET IN TOUCH</span>
+
+                    <h2>We'd love to hear from you.</h2>
+
+                    <p class="info-intro">
+                        Whether you need help using Montra or simply
+                        want to share an idea, you can reach out to us.
+                    </p>
+
+                    <div class="info-list">
+
+                        <div class="info-item">
+                            <div class="info-icon" aria-hidden="true">
+                                <svg viewBox="0 0 24 24">
+                                    <rect x="3" y="5" width="18" height="14" rx="2"></rect>
+                                    <path d="m3 7 9 6 9-6"></path>
+                                </svg>
+                            </div>
+
+                            <div>
+                                <h3>Email Us</h3>
+                                <p>Send us your questions and feedback.</p>
+                                <a href="mailto:support@montra.app">
+                                    support@montra.app
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="info-item">
+                            <div class="info-icon" aria-hidden="true">
+                                <svg viewBox="0 0 24 24">
+                                    <path d="M21 16.5v3a2 2 0 0 1-2.2 2
+                                    19.8 19.8 0 0 1-8.6-3.1
+                                    19.4 19.4 0 0 1-6-6
+                                    A19.8 19.8 0 0 1 1.1 3.8
+                                    2 2 0 0 1 3.1 1.6h3
+                                    a2 2 0 0 1 2 1.7
+                                    c.1 1 .4 2 .7 2.9
+                                    a2 2 0 0 1-.5 2.1L7 9.6
+                                    a16 16 0 0 0 6 6l1.3-1.3
+                                    a2 2 0 0 1 2.1-.5
+                                    c.9.3 1.9.6 2.9.7
+                                    a2 2 0 0 1 1.7 2z"></path>
+                                </svg>
+                            </div>
+
+                            <div>
+                                <h3>Support</h3>
+                                <p>Need help with your account?</p>
+                                <a href="mailto:support@montra.app">
+                                    Contact our support team
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="info-item">
+                            <div class="info-icon" aria-hidden="true">
+                                <svg viewBox="0 0 24 24">
+                                    <path d="M12 22s8-7.5 8-13a8 8 0 1 0-16 0c0 5.5 8 13 8 13z"></path>
+                                    <circle cx="12" cy="9" r="2.5"></circle>
+                                </svg>
+                            </div>
+
+                            <div>
+                                <h3>Our Platform</h3>
+                                <p>
+                                    Expense tracking made simple,
+                                    wherever you are.
+                                </p>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <div class="contact-note">
+                        <div class="note-mark">✦</div>
+                        <p>
+                            <strong>Your feedback matters.</strong>
+                            Your suggestions help us improve the Montra experience.
+                        </p>
+                    </div>
+                </div>
+
+
+                <div class="contact-form-card">
+                    <div class="form-heading">
+                        <h2>Send us a message</h2>
+                        <p>Fill in the form below and tell us how we can help.</p>
+                    </div>
+
+                    <form id="contactForm">
+
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="fullName">Full Name</label>
+                                <input
+                                    type="text"
+                                    id="fullName"
+                                    name="fullName"
+                                    placeholder="Enter your full name"
+                                    autocomplete="name"
+                                    required
+                                >
+                            </div>
+
+                            <div class="form-group">
+                                <label for="email">Email Address</label>
+                                <input
+                                    type="email"
+                                    id="email"
+                                    name="email"
+                                    placeholder="you@example.com"
+                                    autocomplete="email"
+                                    required
+                                >
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="subject">Subject</label>
+                            <select id="subject" name="subject" required>
+                                <option value="" disabled selected>
+                                    Select a subject
+                                </option>
+                                <option value="account">Account Support</option>
+                                <option value="expense-tracking">Expense Tracking</option>
+                                <option value="feedback">Feedback or Suggestion</option>
+                                <option value="bug">Report a Problem</option>
+                                <option value="other">Other Enquiry</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="message">Message</label>
+                            <textarea
+                                id="message"
+                                name="message"
+                                rows="6"
+                                placeholder="Tell us how we can help..."
+                                required
+                            ></textarea>
+                        </div>
+
+                        <button type="submit" class="submit-button">
+                            Send Message
+                            <span aria-hidden="true">→</span>
+                        </button>
+
+                        <p class="form-feedback" id="formFeedback" role="status"></p>
+                    </form>
+                </div>
+
+            </div>
+        </section>
+    </main>
+
+
+    <!-- SECTION 3: FOOTER -->
+    <footer class="footer">
+        <div class="container footer-main">
+
+            <div class="footer-brand">
+                <a href="home.html" class="logo footer-logo">
+                    <img src="montra.jpg" alt="">
+                    <span>Montra</span>
+                </a>
+
+                <p>
+                    Simple expense tracking for smarter
+                    financial decisions.
+                </p>
+            </div>
+
+            <div class="footer-navigation">
+                <h3>Quick Links</h3>
+                <a href="home.html">Home</a>
+                <a href="about.html">About</a>
+                <a href="contact.html">Contact</a>
+            </div>
+
+            <div class="footer-navigation">
+                <h3>Account</h3>
+                <a href="login.html">Log In</a>
+                <a href="login.html">Get Started</a>
+            </div>
+
+        </div>
+
+        <div class="footer-bottom">
+            <div class="container footer-bottom-content">
+                <p>&copy; 2026 Montra. All rights reserved.</p>
+                <p>Made to make money management simpler.</p>
+            </div>
+        </div>
+    </footer>
+
+
+</body>
+</html>
