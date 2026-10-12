@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Finance Dashboard</title>
+    <link rel="stylesheet" href="Dashboard.css">
+</head>
+<body>
+ <div class="dashboard">
+  
+  <aside class="sidebar">
+    <div class="sidebar-brand">
+      <h2>DashApp</h2>
+    </div>
+    <nav class="sidebar-menu">
+      <ul>
+        <li><a href="#dashboard" class="active" data-view="dashboard">📊 Dashboard</a></li>
+        <li><a href="#analytics" data-view="analytics">Analytics</a></li>
+        <li><a href="#users" data-view="users">Users</a></li>
+        <li><a href="#settings" data-view="settings">Settings</a></li>
+      </ul>
+    </nav>
+  </aside>
+  
+  <main class="main-content">
+    <header class="top-bar">
+        <div> 
+          <h2 id="pageTitle">Finance Dashboard</h2>
+          <p id="dashboardSubtitle">Track your monthly activities</p>
+        </div>
+
+        <div class="user-profile" id="dateControls">
+          <button id="todayBtn" type="button">Today</button>
+          <button id="thisMonthBtn" type="button">This month</button>
+        </div>
+    </header>
+
+    <section class="view-panel" id="dashboardView" data-title="Finance Dashboard" data-subtitle="Track your monthly activities">
+     <div id="todayContent">
+      <div>
+        <p class="card-label">Total balance</p>
+        <h2>$125,000</h2>
+      </div>
+      <p class="balance-note">Available funds</p>
+    </div>
+
+    <div id="todayContentitem">
+      <div class="stat">
+        <p class="card-label">Income</p>
+        <!-- <h3>$18,450</h3> -->
+      </div>
+      <div class="stat">
+        <p class="card-label">Expenses</p>
+        <h3>$12,760</h3>
+      </div>
+      <div class="stat">
+        <p class="card-label">Savings</p>
+        <h3>$6,690</h3>
+      </div>
+    </div>
+
+
+ 
+
+    
+    
+    <section class="content-body">
+      <h2>Recent transactions</h2>
+      <ul class="transaction-list">
+        <li><span>Client payment</span><strong class="income">+$4,800</strong></li>
+        <li><span>Cloud hosting</span><strong>−$240</strong></li>
+        <li><span>Payroll</span><strong>−$3,200</strong></li>
+        <li><span>Product plan</span><strong class="income">+$900</strong></li>
+      </ul>
+    </section>
+    </section>
+
+    <section class="view-panel section-view" id="analyticsView" data-title="Analytics" data-subtitle="A clear view of your financial performance" hidden>
+      <section class="content-body">
+        <h2>Monthly overview</h2>
+        <ul class="transaction-list">
+          <li><span>Income</span><strong>$18,450</strong></li>
+          <li><span>Expenses</span><strong>$12,760</strong></li>
+          <li><span>Savings</span><strong>$5,690</strong></li>
+        </ul>
+      </section>
+    </section>
+
+    <section class="view-panel section-view" id="usersView" data-title="Users" data-subtitle="Manage account access" hidden>
+      <section class="content-body">
+        <h2>Team members</h2>
+        <ul class="transaction-list">
+          <li><span>Olivia Martin</span><strong>Owner</strong></li>
+          <li><span>Jackson Lee</span><strong>Admin</strong></li>
+          <li><span>Isabella Chen</span><strong>Editor</strong></li>
+          <li><span>Noah Williams</span><strong>Viewer</strong></li>
+        </ul>
+      </section>
+    </section>
+
+    <section class="view-panel section-view" id="settingsView" data-title="Settings" data-subtitle="Manage your account preferences" hidden>
+      <section class="content-body">
+        <h2>Preferences</h2>
+        <ul class="transaction-list">
+          <li><span>Currency</span><strong>USD</strong></li>
+          <li><span>Email updates</span><strong>On</strong></li>
+          <li><span>Weekly report</span><strong>Off</strong></li>
+        </ul>
+      </section>
+    </section>
+  </main>
+
+
+</div>
+
+    
+
+
+
+<script src="Dashboard.js"></script>
+</body>           
+</html>
+
