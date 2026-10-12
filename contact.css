@@ -1,6 +1,4 @@
-/* =========================
-   GLOBAL STYLES
-========================= */
+
 
 :root {
     --primary: #5238FB;
@@ -69,10 +67,6 @@ textarea:focus-visible {
     margin-inline: auto;
 }
 
-
-/* =========================
-   HEADER
-========================= */
 
 .header {
     position: sticky;
@@ -169,10 +163,6 @@ textarea:focus-visible {
 }
 
 
-/* =========================
-   SECTION 1: HERO
-========================= */
-
 .contact-hero {
     position: relative;
     isolation: isolate;
@@ -263,10 +253,6 @@ textarea:focus-visible {
     background: rgba(82, 56, 251, 0.04);
 }
 
-
-/* =========================
-   SECTION 2: CONTACT
-========================= */
 
 .contact-section {
     padding: 95px 0 105px;
@@ -408,8 +394,6 @@ textarea:focus-visible {
 }
 
 
-/* Contact form */
-
 .contact-form-card {
     min-width: 0;
     padding: 36px;
@@ -539,10 +523,6 @@ textarea:focus-visible {
 }
 
 
-/* =========================
-   SECTION 3: FOOTER
-========================= */
-
 .footer {
     background: #17152D;
     color: #FFFFFF;
@@ -607,10 +587,6 @@ textarea:focus-visible {
 }
 
 
-/* =========================
-   TABLET RESPONSIVENESS
-========================= */
-
 @media (max-width: 1024px) {
     .nav {
         gap: 23px;
@@ -631,16 +607,11 @@ textarea:focus-visible {
 }
 
 
-/* =========================
-   MOBILE RESPONSIVENESS
-========================= */
-
 @media (max-width: 767px) {
     .container {
         width: 90%;
     }
 
-    /* Header */
     .nav-container {
         min-height: 68px;
     }
@@ -713,7 +684,6 @@ textarea:focus-visible {
         color: #FFFFFF;
     }
 
-    /* Hero */
     .contact-hero {
         min-height: auto;
         padding: 75px 0;
@@ -736,7 +706,6 @@ textarea:focus-visible {
         right: -35px;
     }
 
-    /* Contact section */
     .contact-section {
         padding: 65px 0 75px;
     }
@@ -768,7 +737,6 @@ textarea:focus-visible {
         font-size: 23px;
     }
 
-    /* Footer */
     .footer-main {
         grid-template-columns: 1fr 1fr;
         gap: 35px 25px;
@@ -785,10 +753,6 @@ textarea:focus-visible {
     }
 }
 
-
-/* =========================
-   SMALL MOBILE
-========================= */
 
 @media (max-width: 480px) {
     .contact-hero {
@@ -825,8 +789,6 @@ textarea:focus-visible {
     }
 }
 
-
-/* Respect reduced-motion preferences */
 @media (prefers-reduced-motion: reduce) {
     *,
     *::before,
