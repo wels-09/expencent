@@ -189,3 +189,8 @@ userInfoForm.addEventListener("submit", (event) => {
   localStorage.setItem("dashboardUserInfo", JSON.stringify(userInfo));
   userInfoStatus.textContent = "Your information has been saved.";
 });
+
+document.getElementById("thisMonthBtn").addEventListener("click", () => {
+  subtitle.textContent = "Track your monthly activities";
+});
+
