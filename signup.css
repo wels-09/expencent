@@ -77,7 +77,12 @@ input {
     object-fit: contain;
 }
 
-/* Sign up card */
+.logo span {
+    display: inline-block;
+    line-height: 1;
+    position: relative;
+    top: 4px;
+}
 
 .signup-card {
     width: 100%;
@@ -214,7 +219,7 @@ input {
 }
 
 .terms a:hover {
-    text-decoration: underline;
+    text-decoration: none;
 }
 
 /* Create account button */
@@ -275,7 +280,7 @@ input {
 }
 
 .login-prompt a:hover {
-    text-decoration: underline;
+    text-decoration: none;
 }
 
 /* Feedback */
