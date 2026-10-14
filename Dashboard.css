@@ -258,6 +258,138 @@ body {
   margin-bottom: 12px;
    font-size: 18px;
    }
+.summary-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 14px;
+}
+
+.summary-card {
+  min-width: 0;
+  padding: 20px 22px;
+  border-radius: 10px;
+  background: #fff;
+  color: #1e293b;
+  border-top: 4px solid #0f766e;
+}
+
+.summary-card .card-label {
+  color: #64748b;
+}
+
+.summary-card h2,
+.summary-card h3 {
+  overflow-wrap: anywhere;
+  font-size: 24px;
+}
+
+.balance-card {
+  background: #0f766e;
+  color: #fff;
+}
+
+.balance-card .card-label {
+  color: #d1fae5;
+}
+
+.transaction-form {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 8px 14px;
+  max-width: 800px;
+}
+
+.transaction-form label {
+  margin-top: 8px;
+  color: #334155;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.transaction-form input,
+.transaction-form select {
+  width: 100%;
+  min-width: 0;
+  padding: 11px 12px;
+  border: 1px solid #cbd5e1;
+  border-radius: 6px;
+  color: #1e293b;
+  background: #fff;
+  font: inherit;
+}
+
+.transaction-form input:focus,
+.transaction-form select:focus {
+  outline: 2px solid #0f766e;
+  outline-offset: 1px;
+}
+
+.form-actions {
+  grid-column: 1 / -1;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 12px;
+  margin-top: 12px;
+}
+
+.form-actions button {
+  padding: 10px 16px;
+  border: 0;
+  border-radius: 6px;
+  color: #fff;
+  background: #0f766e;
+  font: inherit;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.form-actions button:hover {
+  background: #115e59;
+}
+
+#transactionStatus {
+  color: #15803d;
+  font-size: 14px;
+}
+
+.transaction-list li {
+  align-items: center;
+}
+
+.transaction-details {
+  display: flex;
+  min-width: 0;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.transaction-title {
+  overflow-wrap: anywhere;
+}
+
+.transaction-meta,
+.history-total {
+  color: #64748b;
+  font-size: 13px;
+}
+
+.transaction-amount {
+  flex-shrink: 0;
+  white-space: nowrap;
+}
+
+.transaction-amount.expense {
+  color: #b91c1c;
+}
+
+.transaction-amount.income {
+  color: #15803d;
+}
+
+.empty-state {
+  color: #64748b;
+}
 .transaction-list {
    list-style: none;
    }
@@ -269,9 +401,116 @@ body {
     border-top: 1px solid #e2e8f0; 
     font-size: 14px;
    }
+.category-summary-item {
+  display: block !important;
+}
+
+.category-summary-details {
+  display: grid;
+  gap: 10px;
+}
+
+.category-summary-heading {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 8px 14px;
+}
+
+.category-summary-percentage {
+  margin-left: auto;
+  color: #475569;
+  font-weight: 600;
+}
+
+.category-summary-progress {
+  height: 8px;
+  overflow: hidden;
+  border-radius: 4px;
+  background: #e2e8f0;
+}
+
+.category-summary-progress span {
+  display: block;
+  height: 100%;
+  border-radius: inherit;
+  background: #0f766e;
+}
+
+.category-summary-progress.expense span {
+  background: #b91c1c;
+}
+
+.category-summary-progress.income span {
+  background: #15803d;
+}
+
 .income { 
   color: #15803d;
  }
+
+.user-info-form {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: 8px;
+  max-width: 560px;
+}
+
+.user-info-form label {
+  margin-top: 8px;
+  color: #334155;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.user-info-form input,
+.user-info-form textarea {
+  width: 100%;
+  padding: 11px 12px;
+  border: 1px solid #cbd5e1;
+  border-radius: 6px;
+  color: #1e293b;
+  background: #fff;
+  font: inherit;
+}
+
+.user-info-form input:focus,
+.user-info-form textarea:focus {
+  outline: 2px solid #0f766e;
+  outline-offset: 1px;
+}
+
+.user-info-form textarea {
+  resize: vertical;
+}
+
+.user-info-actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 12px;
+  margin-top: 12px;
+}
+
+.user-info-actions button {
+  padding: 10px 16px;
+  border: 0;
+  border-radius: 6px;
+  color: #fff;
+  background: #0f766e;
+  font: inherit;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.user-info-actions button:hover {
+  background: #115e59;
+}
+
+#userInfoStatus {
+  color: #15803d;
+  font-size: 14px;
+}
 
 .view-panel {
   display: flex;
@@ -285,6 +524,18 @@ body {
 }
 
 @media (max-width: 600px) {
+  .summary-grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .transaction-form {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .form-actions {
+    grid-column: auto;
+  }
+
   .dashboard {
      height: auto;
       min-height: 100vh;
