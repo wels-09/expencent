@@ -56,6 +56,7 @@ input {
         var(--background);
 }
 
+/* Logo */
 
 .logo {
     display: inline-flex;
@@ -113,6 +114,7 @@ input {
     font-size: 12px;
 }
 
+/* Form fields */
 
 .form-group {
     display: flex;
@@ -157,7 +159,7 @@ input {
     font-size: 10px;
 }
 
-
+/* Password controls */
 
 .password-wrapper {
     position: relative;
@@ -185,6 +187,7 @@ input {
     cursor: pointer;
 }
 
+/* Terms and conditions */
 
 .terms {
     display: flex;
@@ -219,6 +222,7 @@ input {
     text-decoration: none;
 }
 
+/* Create account button */
 
 .signup-button {
     display: flex;
@@ -249,6 +253,7 @@ input {
     transform: translateY(-1px);
 }
 
+/* Login link */
 
 .login-prompt {
     display: flex;
@@ -278,6 +283,7 @@ input {
     text-decoration: none;
 }
 
+/* Feedback */
 
 .form-message {
     display: none;
@@ -292,6 +298,7 @@ input {
     display: block;
 }
 
+/* Footer */
 
 .signup-footer {
     margin-top: 24px;
@@ -301,6 +308,7 @@ input {
     text-align: center;
 }
 
+/* Tablet */
 
 @media (max-width: 768px) {
     .signup-page {
@@ -313,6 +321,7 @@ input {
     }
 }
 
+/* Mobile */
 
 @media (max-width: 480px) {
     .signup-page {

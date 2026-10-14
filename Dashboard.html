@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Finance Dashboard</title>
+    <link rel="stylesheet" href="Dashboard.css">
+</head>
+<body>
+ <div class="dashboard">
+  
+  <aside class="sidebar">
+    <div class="sidebar-brand">
+      <h2>DashApp</h2>
+    </div>
+    <nav class="sidebar-menu">
+      <ul>
+        <li><a href="#dashboard" class="active" data-view="dashboard">📊 Dashboard</a></li>
+        <li><a href="#analytics" data-view="analytics">Analytics</a></li>
+        <li><a href="#history" data-view="history">History</a></li>
+        <!-- <li><a href="#aprofilesettings" data-view="profilesettings">Profile settings / Account Settings </a></li> -->
+        <li><a href="#users" data-view="users">Users</a></li>
+        <li><a href="#settings" data-view="settings">Settings</a></li>
+      </ul>
+    </nav>
+  </aside>
+  
+  <main class="main-content">
+    <header class="top-bar">
+        <div> 
+          <h2 id="pageTitle">Finance Dashboard</h2>
+          <p id="dashboardSubtitle">Track your monthly activities</p>
+        </div>
+
+    </header>
+
+    <section class="view-panel" id="dashboardView" data-title="Finance Dashboard" data-subtitle="Track your monthly activities">
+      <section class="summary-grid" aria-label="Account totals">
+        <article class="summary-card balance-card">
+          <p class="card-label">Current balance</p>
+          <h2 id="balanceTotal">$0.00</h2>
+        </article>
+        <article class="summary-card">
+          <p class="card-label">Total income</p>
+          <h3 id="incomeTotal">$0.00</h3>
+        </article>
+        <article class="summary-card">
+          <p class="card-label">Total expenses</p>
+          <h3 id="expenseTotal">$0.00</h3>
+        </article>
+      </section>
+
+      <section class="content-body">
+        <h2>Add a transaction</h2>
+        <form id="transactionForm" class="transaction-form">
+          <label for="transactionType">Type</label>
+          <select id="transactionType" name="type" required>
+            <option value="expense">Expense</option>
+            <option value="income">Income</option>
+          </select>
+
+          <label for="transactionAmount">Amount</label>
+          <input id="transactionAmount" name="amount" type="number" min="0.01" step="0.01" inputmode="decimal" placeholder="0.00" required>
+
+          <label for="transactionCategory">Category</label>
+          <input id="transactionCategory" name="category" type="text" list="categoryOptions" maxlength="40" placeholder="e.g. Food, Salary, Transport" required>
+          <datalist id="categoryOptions">
+            <option value="Food"></option>
+            <option value="Housing"></option>
+            <option value="Salary"></option>
+            <option value="Transport"></option>
+            <option value="Utilities"></option>
+            <option value="Shopping"></option>
+            <option value="Health"></option>
+            <option value="Other"></option>
+          </datalist>
+
+          <label for="transactionDescription">Description</label>
+          <input id="transactionDescription" name="description" type="text" maxlength="80" placeholder="What was this for?" required>
+
+          <label for="transactionDate">Date</label>
+          <input id="transactionDate" name="date" type="date" required>
+
+          <div class="form-actions">
+            <button type="submit">Save transaction</button>
+            <p id="transactionStatus" role="status" aria-live="polite"></p>
+          </div>
+        </form>
+      </section>
+
+      <section class="content-body">
+        <h2>Recent activity</h2>
+        <ul class="transaction-list" id="recentTransactions"></ul>
+      </section>
+    </section>
+
+    <section class="view-panel section-view" id="analyticsView" data-title="Income and spending analytics" data-subtitle="See how income and expenses are distributed by category" hidden>
+      <section class="content-body">
+        <h2>Income and spending by category</h2>
+        <p class="history-total" id="analyticsTotals">Total spent: $0.00 · Total income: $0.00</p>
+        <ul class="transaction-list" id="categorySummary"></ul>
+      </section>
+    </section>
+
+    <section class="view-panel section-view" id="historyView" data-title="History" data-subtitle="Review all saved income and expenses" hidden>
+      <section class="content-body">
+        <h2>All activity</h2>
+        <p class="history-total" id="historyCount">0 transactions</p>
+        <ul class="transaction-list" id="transactionHistory"></ul>
+      </section>
+    </section>
+
+    <section class="view-panel section-view" id="usersView" data-title="Users" data-subtitle="Manage account access" hidden>
+      <section class="content-body">
+        <h2>Your information</h2>
+        <form id="userInfoForm" class="user-info-form">
+          <label for="userName">Full name</label>
+          <input id="userName" name="name" type="text" autocomplete="name" required>
+
+          <label for="userEmail">Email address</label>
+          <input id="userEmail" name="email" type="email" autocomplete="email" required>
+
+          <label for="userPhone">Phone number</label>
+          <input id="userPhone" name="phone" type="tel" autocomplete="tel">
+
+          <label for="userAddress">Address</label>
+          <textarea id="userAddress" name="address" rows="3" autocomplete="street-address"></textarea>
+
+          <div class="user-info-actions">
+            <button type="submit">Save information</button>
+            <p id="userInfoStatus" role="status" aria-live="polite"></p>
+          </div>
+        </form>
+      </section>
+    </section>
+
+    <section class="view-panel section-view" id="settingsView" data-title="Settings" data-subtitle="Manage your account preferences" hidden>
+      <section class="content-body">
+        <h2>Preferences</h2>
+        <ul class="transaction-list">
+          <li><span>Currency</span><strong>USD</strong></li>
+          <li><span>Email updates</span><strong>On</strong></li>
+          <li><span>Weekly report</span><strong>Off</strong></li>
+        </ul>
+      </section>
+    </section>
+
+  </main>
+
+
+</div>
+
+    
+
+
+
+<script src="Dashboard.js"></script>
+</body>           
+</html>
+

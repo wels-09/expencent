@@ -56,6 +56,7 @@ input {
         var(--background);
 }
 
+/* Logo */
 
 .logo {
     display: inline-flex;
@@ -113,6 +114,7 @@ input {
     font-size: 13px;
 }
 
+/* Form fields */
 
 .form-group {
     display: flex;
@@ -153,6 +155,7 @@ input {
     box-shadow: 0 0 0 3px rgba(82, 56, 251, 0.1);
 }
 
+/* Password field */
 
 .password-wrapper {
     position: relative;
@@ -180,6 +183,7 @@ input {
     cursor: pointer;
 }
 
+/* Remember me and forgot password */
 
 .login-options {
     display: flex;
@@ -217,6 +221,7 @@ input {
     text-decoration:none;
 }
 
+/* Login button */
 
 .login-button {
     width: 100%;
@@ -250,6 +255,7 @@ a:focus-visible {
     outline-offset: 3px;
 }
 
+/* Sign-up link */
 
 .signup-prompt {
     display: flex;
@@ -279,6 +285,7 @@ a:focus-visible {
     text-decoration:none;
 }
 
+/* Form feedback */
 
 .form-message {
     display: none;
@@ -292,6 +299,7 @@ a:focus-visible {
     display: block;
 }
 
+/* Footer */
 
 .login-footer {
     margin-top: 28px;
@@ -300,6 +308,7 @@ a:focus-visible {
     text-align: center;
 }
 
+/* Tablet */
 
 @media (max-width: 768px) {
     .login-page {
@@ -312,6 +321,7 @@ a:focus-visible {
     }
 }
 
+/* Mobile */
 
 @media (max-width: 480px) {
     .login-page {
