@@ -76,6 +76,12 @@ input {
     object-fit: contain;
 }
 
+.logo span {
+    display: inline-block;
+    line-height: 1;
+    position: relative;
+    top: 4px;
+}
 
 .signup-card {
     width: 100%;
@@ -210,7 +216,7 @@ input {
 }
 
 .terms a:hover {
-    text-decoration: underline;
+    text-decoration: none;
 }
 
 
@@ -269,7 +275,7 @@ input {
 }
 
 .login-prompt a:hover {
-    text-decoration: underline;
+    text-decoration: none;
 }
 
 

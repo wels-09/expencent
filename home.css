@@ -74,6 +74,12 @@ button {
     display: block;
     
 }
+.logo span {
+    display: inline-block;
+    line-height: 1;
+    position: relative;
+    top: 4px;
+}
 
 
 .nav {
@@ -147,17 +153,15 @@ button {
     inset: 0;
 
     background:
-        linear-gradient(
+       linear-gradient(
             90deg,
-           
-            
-            rgba(238, 250, 246, 0.55) 100%
+            rgba(238, 250, 245, 0.97),
+            rgba(238, 250, 245, 0.75)
         ),
         url("background.jpg");
 
     background-size: cover;
     background-position: center;
-    opacity: 1;
 }
 
 .hero-container {
@@ -170,18 +174,6 @@ button {
     align-items: center;
     justify-content: center;
     gap: 70px;
-}
-
-
-.small-label {
-    display: inline-block;
-    padding: 6px 12px;
-    border-radius: 30px;
-    background: #e2e7f5;
-    color: #5238FB;
-    font-size: 12px;
-    font-weight: 600;
-    margin-bottom: 18px;
 }
 
 .hero h1 {
@@ -200,14 +192,15 @@ button {
     margin-top: 25px;
     font-size: 18px;
     font-weight: 600;
-    color: #243b55;
+    color: #10233f;
     max-width: 520px;
+ 
 }
 
 .hero-text {
     margin-top: 10px;
     font-size: 15px;
-    color: rgb(6, 3, 72);
+    color: #10233f;
     max-width: 500px;
 }
 
@@ -804,48 +797,6 @@ button {
 }
 
 
-.cta-section {
-    padding: 100px 0;
-    background:
-        linear-gradient(
-            135deg,
-            #5238FB,
-            #0832a6
-        );
-    color: white;
-}
-
-.cta-content {
-    text-align: center;
-    max-width: 700px;
-    margin: auto;
-}
-
-.cta-content .small-label {
-    background: rgba(255, 255, 255, 0.15);
-    color: white;
-}
-
-.cta-content h2 {
-    font-size: clamp(35px, 5vw, 55px);
-    line-height: 1.1;
-    letter-spacing: -1.5px;
-}
-
-.cta-content p {
-    max-width: 550px;
-    margin: 20px auto 30px;
-    color: rgba(255,255,255,0.8);
-}
-
-.btn-white {
-    background: white;
-    color: #5238FB;
-}
-
-.btn-white:hover {
-    transform: translateY(-2px);
-}
 
 
 .footer {
@@ -863,6 +814,8 @@ button {
 
 .footer-logo {
     color: white;
+    display: flex;
+    align-items: center;
 }
 
 .footer-brand p {
@@ -914,13 +867,12 @@ button {
 }
 
 .social-links a:hover {
-    background: #08a66a;
+    background: #5238FB;
 }
 
 .footer-bottom {
     border-top: 1px solid rgba(255,255,255,0.08);
     padding: 20px 0;
-    text-align: center;
 }
 
 .footer-bottom p {

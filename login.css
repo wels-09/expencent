@@ -76,6 +76,12 @@ input {
     object-fit: contain;
 }
 
+.logo span {
+    display: inline-block;
+    line-height: 1;
+    position: relative;
+    top: 4px;
+}
 
 .login-card {
     width: 100%;
@@ -208,7 +214,7 @@ input {
 }
 
 .forgot-password:hover {
-    text-decoration: underline;
+    text-decoration:none;
 }
 
 
@@ -270,7 +276,7 @@ a:focus-visible {
 }
 
 .signup-prompt a:hover {
-    text-decoration: underline;
+    text-decoration:none;
 }
 
 
