@@ -139,9 +139,8 @@ textarea:focus-visible {
 }
 
 .nav .nav-cta:hover {
-    background: var(--primary-dark);
+     background: rgb(27, 27, 122);
     color: #FFFFFF;
-    transform: translateY(-1px);
 }
 
 .menu-toggle {
@@ -552,7 +551,7 @@ textarea:focus-visible {
 }
 
 .footer-navigation a:hover {
-    color: #B9AEFF;
+    color: white;
 }
 
 .social-links {
