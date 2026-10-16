@@ -69,92 +69,88 @@ textarea:focus-visible {
 }
 
 .container {
-    width: min(1160px, 92%);
+    width: min(1180px, 92%);
     margin-inline: auto;
 }
 
 
 /* ---------- Header ---------- */
-
 .header {
+    height: 76px;
+    background: rgba(255, 255, 255, 0.96);
+    border-bottom: 1px solid #edf1ef;
     position: sticky;
     top: 0;
     z-index: 1000;
-
-    background: rgba(255, 255, 255, 0.96);
-    border-bottom: 1px solid var(--border);
-    -webkit-backdrop-filter: blur(14px);
-    backdrop-filter: blur(14px);
+    backdrop-filter: blur(10px);
 }
 
 .nav-container {
-    min-height: var(--header-h);
-
+    height: 100%;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    gap: 24px;
 }
+
 
 .logo {
     display: inline-flex;
     align-items: center;
     gap: 10px;
-
-    flex-shrink: 0;
-
+    text-decoration: none;
+    color: #12233f;
     font-size: 21px;
     font-weight: 800;
-    line-height: 1;
-    color: var(--text);
 }
 
 .logo img {
-    display: block;
-    width: 40px;
-    height: 40px;
+    width: 42px;
+    height: 42px;
     object-fit: contain;
+    display: block;
+    
 }
-
-/* removed the position/top: 4px hack; align-items: center handles it */
 .logo span {
     display: inline-block;
     line-height: 1;
+    position: relative;
+    top: 4px;
 }
+
 
 .nav {
     display: flex;
     align-items: center;
-    gap: 34px;
+    gap: 38px;
+    
 }
 
 .nav > a {
     font-size: 14px;
     font-weight: 500;
-    color: #4D5668;
-    transition: color 0.2s ease;
+    color: #34435a;
+    transition: 0.3s ease;
 }
 
-.nav > a:hover,
+.nav > a:hover {
+    color: #5238FB;
+}
+
 .nav > a.active {
-    color: var(--primary);
+    color: #5238FB;
 }
 
-.nav .nav-cta {
-    padding: 11px 21px;
-    border-radius: 8px;
-
+.get-started {
     background: var(--primary);
-    color: #FFFFFF;
-    font-weight: 600;
-
-    transition: background 0.2s ease, transform 0.2s ease;
+    color: #fff !important;
+    padding: 12px 22px;
+    border-radius: 8px;
+    font-weight: 600 !important;
 }
 
-.nav .nav-cta:hover {
+
+.get-started:hover {
     background: var(--primary-dark);
-    color: #FFFFFF;
-    transform: translateY(-1px);
 }
 
 .menu-toggle {
@@ -163,14 +159,12 @@ textarea:focus-visible {
     justify-content: center;
     align-items: center;
     gap: 5px;
-
-    width: 40px;
-    height: 40px;
-    padding: 5px;
-
     background: transparent;
     border: none;
     cursor: pointer;
+    width: 40px;
+    height: 40px;
+    padding: 5px;
     z-index: 1001;
 }
 
@@ -178,13 +172,12 @@ textarea:focus-visible {
     display: block;
     width: 25px;
     height: 2px;
-    background: #12233f;
+    background: var(--text);
 }
 
 .mobile-menu {
     display: none;
 }
-
 
 /* ---------- Hero ---------- */
 
@@ -360,7 +353,7 @@ textarea:focus-visible {
 }
 
 .info-item a:hover {
-    text-decoration: underline;
+    text-decoration: none;
 }
 
 .contact-note {
@@ -582,7 +575,7 @@ textarea:focus-visible {
 }
 
 .footer-navigation a:hover {
-    color: #B9AEFF;
+    color: white;
 }
 
 .social-links {
@@ -724,6 +717,7 @@ textarea:focus-visible {
         text-align: center;
         background: var(--primary);
         color: #FFFFFF;
+        font-weight: 600;
     }
 
     /* was .about-hero (copy-paste leftover from another page) */

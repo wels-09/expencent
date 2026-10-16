@@ -1000,16 +1000,23 @@ button {
         border-radius: 8px;
         color: #12233f;
     }
+    
+     .mobile-menu a.active,
+    .mobile-menu a[aria-current="page"] {
+        color: #5238FB;
+        background: #F0EDFF;
+    }
 
     .mobile-menu a:hover {
         background: #f0faf6;
     }
 
-    .mobile-get-started {
+    .mobile-menu .mobile-get-started {
         background: #5238FB;
         color: white;
         text-align: center;
         margin-top: 5px;
+        font-weight: 600;
     }
 
     .mobile-menu .mobile-get-started:hover {

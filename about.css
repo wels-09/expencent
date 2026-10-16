@@ -56,18 +56,13 @@ button:focus-visible {
 }
 
 
-/* ---------- Header ---------- */
-
 .header {
-    height: var(--header-h);
-    background: rgba(255, 255, 255, 0.97);
+    height: 76px;
+    background: rgba(255, 255, 255, 0.96);
     border-bottom: 1px solid #edf1ef;
-
     position: sticky;
     top: 0;
     z-index: 1000;
-
-    -webkit-backdrop-filter: blur(10px);
     backdrop-filter: blur(10px);
 }
 
@@ -78,14 +73,15 @@ button:focus-visible {
     justify-content: space-between;
 }
 
+
 .logo {
     display: inline-flex;
     align-items: center;
     gap: 10px;
-    color: var(--text);
+    text-decoration: none;
+    color: #12233f;
     font-size: 21px;
     font-weight: 800;
-    line-height: 1;
 }
 
 .logo img {
@@ -93,31 +89,36 @@ button:focus-visible {
     height: 42px;
     object-fit: contain;
     display: block;
+    
 }
-
-/* removed the position/top: 4px hack; align-items: center handles it */
 .logo span {
     display: inline-block;
     line-height: 1;
+    position: relative;
+    top: 4px;
 }
+
 
 .nav {
     display: flex;
     align-items: center;
     gap: 38px;
+    
 }
 
 .nav > a {
-    color: #34435a;
     font-size: 14px;
     font-weight: 500;
-    transition: color 0.3s ease, background 0.3s ease;
+    color: #34435a;
+    transition: 0.3s ease;
 }
 
-.nav > a:hover,
-.nav > a.active,
-.nav > a[aria-current="page"] {
-    color: var(--primary);
+.nav > a:hover {
+    color: #5238FB;
+}
+
+.nav > a.active {
+    color: #5238FB;
 }
 
 .get-started {
@@ -128,7 +129,7 @@ button:focus-visible {
     font-weight: 600 !important;
 }
 
-/* was rgb(27,27,122), which didn't match the brand color */
+
 .get-started:hover {
     background: var(--primary-dark);
 }
@@ -202,7 +203,7 @@ button:focus-visible {
 
 .hero-copy h1 {
     max-width: 750px;
-    font-size: clamp(48px, 5.5vw, 76px);
+    font-size: clamp(48px, 5.5vw, 62px);
     font-weight: 800;
     line-height: 1.05;
     letter-spacing: -2.5px;
@@ -364,9 +365,6 @@ button:focus-visible {
     margin-bottom: 10px;
 }
 
-
-/* ---------- Footer ---------- */
-
 .footer {
     background: #10253a;
     color: #fff;
@@ -440,9 +438,6 @@ button:focus-visible {
     color: #8997a6;
     font-size: 12px;
 }
-
-
-/* ---------- Responsive ---------- */
 
 @media (max-width: 1024px) {
     .container {
@@ -694,15 +689,5 @@ button:focus-visible {
 
     .stat h2 {
         font-size: 20px;
-    }
-}
-
-@media (prefers-reduced-motion: reduce) {
-    *,
-    *::before,
-    *::after {
-        scroll-behavior: auto !important;
-        transition-duration: 0.01ms !important;
-        animation-duration: 0.01ms !important;
     }
 }
