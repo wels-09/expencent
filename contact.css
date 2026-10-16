@@ -75,7 +75,7 @@ textarea:focus-visible {
 
     background: rgba(255, 255, 255, 0.96);
     border-bottom: 1px solid var(--border);
-    backdrop-filter: blur(14px);
+    backdrop-filter: blur(10px);
 }
 
 .nav-container {
@@ -84,16 +84,12 @@ textarea:focus-visible {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    gap: 24px;
 }
 
 .logo {
     display: inline-flex;
     align-items: center;
     gap: 10px;
-
-    flex-shrink: 0;
-
     font-size: 21px;
     font-weight: 800;
     color: var(--text);
@@ -101,8 +97,8 @@ textarea:focus-visible {
 
 .logo img {
     display: block;
-    width: 40px;
-    height: 40px;
+    width: 42px;
+    height: 42px;
     object-fit: contain;
 }
 
@@ -110,20 +106,20 @@ textarea:focus-visible {
     display: inline-block;
     line-height: 1;
     position: relative;
-    top: 4px;
+    top: 3px;
 }
 
 .nav {
     display: flex;
     align-items: center;
-    gap: 34px;
+    gap: 38px;
 }
 
 .nav > a {
     font-size: 14px;
     font-weight: 500;
-    color: #4D5668;
-    transition: color 0.2s ease;
+    color: #34435a;
+    transition: color 0.3s ease;
 }
 
 .nav > a:hover,
@@ -132,7 +128,7 @@ textarea:focus-visible {
 }
 
 .nav .nav-cta {
-    padding: 11px 21px;
+    padding: 12px 22px;
     border-radius: 8px;
 
     background: var(--primary);
@@ -143,9 +139,8 @@ textarea:focus-visible {
 }
 
 .nav .nav-cta:hover {
-    background: var(--primary-dark);
+     background: rgb(27, 27, 122);
     color: #FFFFFF;
-    transform: translateY(-1px);
 }
 
 .menu-toggle {
@@ -339,7 +334,7 @@ textarea:focus-visible {
 }
 
 .info-item a:hover {
-    text-decoration: underline;
+    text-decoration: none;
 }
 
 .contact-note {
@@ -556,7 +551,7 @@ textarea:focus-visible {
 }
 
 .footer-navigation a:hover {
-    color: #B9AEFF;
+    color: white;
 }
 
 .social-links {
