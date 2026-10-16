@@ -19,15 +19,15 @@
 
         <div class="container nav-container">
 
-            <a href="home.html" class="logo">
-               <img src="montra.jpg" alt="Montra logo">
+            <a href="index.html" class="logo">
+               <img src="montra.png" alt="Montra logo">
                <span>MONTRA</span>
             </a>
 
 
             <nav class="nav">
 
-                <a href="home.html" class="active">Home</a>
+                <a href="index.html" class="active" aria-current="page">Home</a>
 
                 <a href="about.html">About</a>
 
@@ -39,7 +39,14 @@
 
             </nav>
 
-            <button class="menu-toggle" id="menuToggle" aria-label="Open navigation">
+            <button
+                type="button"
+                class="menu-toggle"
+                id="menuToggle"
+                aria-label="Open navigation"
+                aria-controls="mobileMenu"
+                aria-expanded="false"
+            >
                 <span></span>
                 <span></span>
                 <span></span>
@@ -51,9 +58,9 @@
 
 
 
-    <div class="mobile-menu" id="mobileMenu">
+    <nav class="mobile-menu" id="mobileMenu" aria-label="MObile navigation">
 
-        <a href="home.html">Home</a>
+        <a href="index.html" class="active" aria-current="page">Home</a>
 
         <a href="about.html">About</a>
 
@@ -63,7 +70,7 @@
             Get Started
         </a>
 
-    </div>
+    </nav>
 
     <main>
 
@@ -74,10 +81,6 @@
             <div class="container hero-container">
 
                 <div class="hero-content">
-
-                    <div class="small-label">
-                        Smart Expense Tracking
-                    </div>
 
                     <h1>
                         Take Control
@@ -100,11 +103,6 @@
 
                         <a href="login.html" class="btn btn-primary">
                             Get Started
-                            <span>→</span>
-                        </a>
-
-                        <a href="#features" class="btn btn-secondary">
-                            Learn More
                         </a>
 
                     </div>
@@ -157,9 +155,6 @@
                                     <h3>₦125,000</h3>
                                 </div>
 
-                                <div class="chart-mini">
-                                    <div class="chart-line"></div>
-                                </div>
 
                             </div>
 
@@ -250,10 +245,6 @@
             <div class="container">
 
                 <div class="section-heading">
-
-                    <div class="small-label">
-                        MONTRA FEATURES
-                    </div>
 
                     <h2>
                         Everything you need to
@@ -351,10 +342,6 @@
 
                 <div class="section-heading">
 
-                    <div class="small-label">
-                        HOW IT WORKS
-                    </div>
-
                     <h2>
                         Managing your money
                         <span>made simple</span>
@@ -436,12 +423,7 @@
 
             <div class="container overview-container">
 
-
                 <div class="overview-content">
-
-                    <div class="small-label">
-                        YOUR MONEY AT A GLANCE
-                    </div>
 
                     <h2>
                         See where your money
@@ -480,9 +462,6 @@
                     </div>
 
                 </div>
-
-
-               
 
                 <div class="spending-card">
 
@@ -558,9 +537,6 @@
 
         </section>
 
-
-
-
         <section class="benefits section">
 
             <div class="container">
@@ -583,10 +559,6 @@
 
 
                     <div class="benefits-content">
-
-                        <div class="small-label">
-                            WHY MONTRA?
-                        </div>
 
                         <h2>
                             Built to make
@@ -659,41 +631,6 @@
 
         </section>
 
-
-
-     
-
-        <section class="cta-section">
-
-            <div class="container">
-
-                <div class="cta-content">
-
-                    <div class="small-label">
-                        GET STARTED TODAY
-                    </div>
-
-                    <h2>
-                        Ready to take control
-                        of your spending?
-                    </h2>
-
-                    <p>
-                        Start organizing your expenses and
-                        build better financial habits with MONTRA.
-                    </p>
-
-                    <a href="login.html" class="btn btn-white">
-                        Get Started
-                        <span>→</span>
-                    </a>
-
-                </div>
-
-            </div>
-
-        </section>
-
     </main>
 
 
@@ -705,11 +642,10 @@
 
             <div class="footer-brand">
 
-                <a href="home.html" class="logo footer-logo">
+                <a href="index.html" class="logo footer-logo">
 
-                    <img src="montra.jpg" alt="Montra logo">
-
-                    MONTRA
+                    <img src="montra.png" alt="Montra logo">
+                    <span>MONTRA</span>
 
                 </a>
 
@@ -724,7 +660,7 @@
             <div class="footer-links">
 
                 <div>
-                    <a href="home.html">Home</a>
+                    <a href="index.html">Home</a>
                     <a href="about.html">About</a>
                     <a href="contact.html">Contact</a>
                 </div>
@@ -757,6 +693,6 @@
         </div>
 
     </footer>
-
+    <script src="home.js"></script>
 </body>
 </html>
