@@ -99,7 +99,11 @@ document.addEventListener("DOMContentLoaded", () => {
         );
 
         
-        window.location.href = "Dashboard.html";
+        setTimeout(() => {
+             window.location.href = "Dashboard.html";
+        }, 2000)
+        
+       loginForm.reset()
 
     });
 
