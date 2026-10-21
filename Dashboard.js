@@ -11,6 +11,8 @@ document.addEventListener("DOMContentLoaded", () => {
         return;
     }
 
+    alert(`Welcome back, ${currentUser.fullName || "User"}!`);
+
     const userId = String(currentUser.id);
     const userEmail = currentUser.email.toLowerCase();
 

@@ -7,12 +7,10 @@ document.addEventListener("DOMContentLoaded", () => {
     const togglePassword = document.getElementById("togglePassword");
     const formMessage = document.getElementById("formMessage");
 
-
     function errorMessage(message, type) {
         formMessage.textContent = message;
         formMessage.className = `form-message ${type}`;
     }
-
 
     togglePassword.addEventListener("click", () => {
 
@@ -29,10 +27,8 @@ document.addEventListener("DOMContentLoaded", () => {
                 "aria-label", "Show password"
             );
         }
-
     });
 
-    
     loginForm.addEventListener("submit", (event) => {
 
         event.preventDefault();
@@ -58,13 +54,11 @@ document.addEventListener("DOMContentLoaded", () => {
             return;
         }
 
-        
         const existingUser = users.find((user) =>
             user.email === userEmail &&
             user.password === userPassword
         );
 
-        // Check login details
         if (!existingUser) {
             errorMessage(
                 "Incorrect email or password. Please try again.",
@@ -73,7 +67,6 @@ document.addEventListener("DOMContentLoaded", () => {
             return;
         }
 
-        // Save current user
         try {
             localStorage.setItem(
                 "montraCurrentUser",
@@ -92,7 +85,6 @@ document.addEventListener("DOMContentLoaded", () => {
             return;
         }
 
-        // Login successful
         errorMessage(
             `Login successful! Welcome ${existingUser.fullName || existingUser.name}.`,
             "success"
@@ -102,9 +94,8 @@ document.addEventListener("DOMContentLoaded", () => {
         setTimeout(() => {
              window.location.href = "Dashboard.html";
         }, 2000)
-        
-       loginForm.reset()
 
+       loginForm.reset()
     });
 
 });
