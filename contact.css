@@ -1,5 +1,3 @@
-
-
 :root {
     --primary: #5238FB;
     --primary-dark: #4027D8;
@@ -14,6 +12,7 @@
 
     --radius: 14px;
     --shadow: 0 18px 50px rgba(37, 27, 105, 0.07);
+    --header-h: 76px;
 }
 
 * {
@@ -24,13 +23,20 @@
 
 html {
     scroll-behavior: smooth;
+    -webkit-text-size-adjust: 100%;
 }
 
 body {
-    font-family: "Inter", sans-serif;
+    font-family: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
     color: var(--text);
     background: var(--surface);
     line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
 }
 
 a {
@@ -63,100 +69,109 @@ textarea:focus-visible {
 }
 
 .container {
-    width: min(1160px, 92%);
+    width: min(1180px, 92%);
     margin-inline: auto;
 }
 
 
+/* ---------- Header ---------- */
 .header {
+    height: 76px;
+    background: rgba(255, 255, 255, 0.96);
+    border-bottom: 1px solid #edf1ef;
     position: sticky;
     top: 0;
     z-index: 1000;
-
-    background: rgba(255, 255, 255, 0.96);
-    border-bottom: 1px solid var(--border);
     backdrop-filter: blur(10px);
 }
 
 .nav-container {
-    min-height: 76px;
-
+    height: 100%;
     display: flex;
     align-items: center;
     justify-content: space-between;
 }
 
+
 .logo {
     display: inline-flex;
     align-items: center;
     gap: 10px;
+    text-decoration: none;
+    color: #12233f;
     font-size: 21px;
     font-weight: 800;
-    color: var(--text);
 }
 
 .logo img {
-    display: block;
     width: 42px;
     height: 42px;
     object-fit: contain;
+    display: block;
+    
 }
-
 .logo span {
     display: inline-block;
     line-height: 1;
     position: relative;
-    top: 3px;
+    top: 4px;
 }
+
 
 .nav {
     display: flex;
     align-items: center;
     gap: 38px;
+    
 }
 
 .nav > a {
     font-size: 14px;
     font-weight: 500;
     color: #34435a;
-    transition: color 0.3s ease;
+    transition: 0.3s ease;
 }
 
-.nav > a:hover,
+.nav > a:hover {
+    color: #5238FB;
+}
+
 .nav > a.active {
-    color: var(--primary);
+    color: #5238FB;
 }
 
-.nav .nav-cta {
+.get-started {
+    background: var(--primary);
+    color: #fff !important;
     padding: 12px 22px;
     border-radius: 8px;
-
-    background: var(--primary);
-    color: #FFFFFF;
-    font-weight: 600;
-
-    transition: background 0.2s ease, transform 0.2s ease;
+    font-weight: 600 !important;
 }
 
-.nav .nav-cta:hover {
-     background: rgb(27, 27, 122);
-    color: #FFFFFF;
+
+.get-started:hover {
+    background: var(--primary-dark);
 }
 
 .menu-toggle {
     display: none;
-    padding: 5px;
-    border: 0;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
     background: transparent;
+    border: none;
     cursor: pointer;
+    width: 40px;
+    height: 40px;
+    padding: 5px;
+    z-index: 1001;
 }
 
 .menu-toggle span {
     display: block;
     width: 25px;
     height: 2px;
-    margin: 5px 0;
-    border-radius: 3px;
     background: var(--text);
 }
 
@@ -164,26 +179,18 @@ textarea:focus-visible {
     display: none;
 }
 
+/* ---------- Hero ---------- */
 
 .contact-hero {
     position: relative;
     isolation: isolate;
     overflow: hidden;
-    height: 100vh;
 
-    display: flex;
-    align-items: center;
 
-    min-height: 350px;
+    /* min-height instead of fixed height so content is never clipped */
+    min-height: calc(100vh - var(--header-h));
+    min-height: calc(100svh - var(--header-h));
     padding: 75px 0;
-
-    background:
-         linear-gradient(
-            90deg,
-            rgba(238, 250, 245, 0.97),
-            rgba(238, 250, 245, 0.75)
-        ),
-        url("background.jpg");
 
     background-size: cover;
     background-position: center;
@@ -193,7 +200,6 @@ textarea:focus-visible {
     display: grid;
     grid-template-columns: 1.05fr 0.95fr;
     align-items: center;
-    justify-content: center;
     gap: 40px;
     width: 100%;
 }
@@ -212,7 +218,7 @@ textarea:focus-visible {
 
 .hero-copy h1 span {
     display: block;
-    color: #5238FB;
+    color: var(--primary);
 }
 
 .hero-copy p {
@@ -220,7 +226,7 @@ textarea:focus-visible {
     margin-top: 22px;
     font-size: 16px;
     line-height: 1.7;
-    color: #697386;
+    color: var(--muted);
 }
 
 .hero-image {
@@ -228,6 +234,8 @@ textarea:focus-visible {
     display: flex;
     align-items: center;
     justify-content: center;
+    border-radius: 18px;
+    background: var(--primary-light);
 }
 
 .hero-image img {
@@ -235,8 +243,12 @@ textarea:focus-visible {
     width: 100%;
     max-width: 500px;
     max-height: 460px;
-    object-fit: contain;
+    object-fit: cover;
+    border-radius: 18px;
 }
+
+
+/* ---------- Contact section ---------- */
 
 .contact-section {
     padding: 95px 0 105px;
@@ -319,7 +331,7 @@ textarea:focus-visible {
 
 .info-item p {
     color: var(--muted);
-    font-size: 12px;
+    font-size: 13px;
 }
 
 .info-item a {
@@ -348,7 +360,7 @@ textarea:focus-visible {
     border: 1px solid var(--primary-border);
     border-radius: 12px;
 
-    background: #FAF9FF;
+    background: var(--page-bg);
 }
 
 .note-mark {
@@ -367,7 +379,7 @@ textarea:focus-visible {
 
 .contact-note p {
     color: var(--muted);
-    font-size: 12px;
+    font-size: 13px;
 }
 
 .contact-note strong {
@@ -377,6 +389,8 @@ textarea:focus-visible {
     font-size: 13px;
 }
 
+
+/* ---------- Form ---------- */
 
 .contact-form-card {
     min-width: 0;
@@ -419,7 +433,7 @@ textarea:focus-visible {
 }
 
 .form-group label {
-    font-size: 12px;
+    font-size: 13px;
     font-weight: 600;
     color: #343D50;
 }
@@ -438,7 +452,8 @@ textarea:focus-visible {
     background: #FFFFFF;
     color: var(--text);
 
-    font-size: 12px;
+    /* 16px prevents iOS Safari from zooming the page on focus */
+    font-size: 16px;
 
     transition: border-color 0.2s ease, box-shadow 0.2s ease;
 }
@@ -463,7 +478,7 @@ textarea:focus-visible {
 .form-group textarea:focus {
     border-color: var(--primary);
     outline: none;
-    box-shadow: 0 0 0 3px rgba(82, 56, 251, 0.1);
+    box-shadow: 0 0 0 3px rgba(82, 56, 251, 0.2);
 }
 
 .submit-button {
@@ -482,7 +497,7 @@ textarea:focus-visible {
     background: var(--primary);
     color: #FFFFFF;
 
-    font-size: 13px;
+    font-size: 14px;
     font-weight: 600;
 
     cursor: pointer;
@@ -499,13 +514,15 @@ textarea:focus-visible {
     display: none;
     margin-top: 14px;
     color: var(--primary-dark);
-    font-size: 12px;
+    font-size: 13px;
 }
 
 .form-feedback.visible {
     display: block;
 }
 
+
+/* ---------- Footer ---------- */
 
 .footer {
     background: #10253a;
@@ -564,7 +581,7 @@ textarea:focus-visible {
     width: 34px;
     height: 34px;
     border-radius: 50%;
-    background: rgba(255,255,255,0.08);
+    background: rgba(255, 255, 255, 0.08);
 
     display: flex;
     align-items: center;
@@ -572,11 +589,11 @@ textarea:focus-visible {
 
     font-size: 12px;
 
-    transition: 0.3s;
+    transition: background 0.3s ease;
 }
 
 .social-links a:hover {
-    background: #5238FB;
+    background: var(--primary);
 }
 
 .footer-bottom {
@@ -592,9 +609,11 @@ textarea:focus-visible {
 
 .footer-bottom p {
     color: #A6A3BA;
-    font-size: 11px;
+    font-size: 12px;
 }
 
+
+/* ---------- Responsive ---------- */
 
 @media (max-width: 1024px) {
     .nav {
@@ -617,12 +636,12 @@ textarea:focus-visible {
 
 
 @media (max-width: 767px) {
-    .container {
-        width: 90%;
+    :root {
+        --header-h: 68px;
     }
 
-    .nav-container {
-        min-height: 68px;
+    .container {
+        width: 90%;
     }
 
     .logo {
@@ -639,7 +658,7 @@ textarea:focus-visible {
     }
 
     .menu-toggle {
-        display: block;
+        display: flex;
     }
 
     .mobile-menu {
@@ -667,11 +686,11 @@ textarea:focus-visible {
                     visibility 0.2s ease;
     }
 
-    .mobile-menu.show {
+    .mobile-menu.active {
+        transform: translateY(0);
         visibility: visible;
         opacity: 1;
-        pointer-events: auto;
-        transform: translateY(0);
+        pointer-events: auto; /* was missing: links were unclickable when open */
     }
 
     .mobile-menu a {
@@ -691,10 +710,13 @@ textarea:focus-visible {
         text-align: center;
         background: var(--primary);
         color: #FFFFFF;
+        font-weight: 600;
     }
 
-    .about-hero {
+    /* was .about-hero (copy-paste leftover from another page) */
+    .contact-hero {
         min-height: 400px;
+        padding: 60px 0;
     }
 
     .hero-layout {
@@ -705,7 +727,7 @@ textarea:focus-visible {
     .hero-copy h1 {
         font-size: clamp(38px, 8vw, 52px);
         letter-spacing: -1.8px;
-          margin-top:150px
+        /* removed margin-top: 150px hack (missing semicolon, pushed content off-screen) */
     }
 
     .hero-copy p {
@@ -766,15 +788,12 @@ textarea:focus-visible {
 
 
 @media (max-width: 480px) {
-    .contact-hero {
-        padding: 60px 0;
-    }
-
-    .contact-hero h1 {
+   
+    .hero-copy h1 {
         font-size: 38px;
     }
 
-    .contact-hero p {
+    .hero-copy p {
         font-size: 13px;
     }
 

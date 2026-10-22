@@ -22,59 +22,49 @@
 
     <header class="header">
 
-        <div class="container nav-container">
+       
+<div class="container nav-container">
 
-            <a href="home.html" class="logo">
+    <a href="index.html" class="logo">
+        <img src="montra.png" alt="Montra logo">
+        <span>MONTRA</span>
+    </a>
 
-                 <img src="montra.png" alt="Montra logo">
+    <nav class="nav">
+        <a href="index.html">Home</a>
+        <a href="about.html" class="active">About</a>
+        <a href="contact.html">Contact</a>
+        <a href="login.html" class="get-started">Login</a>
+    </nav>
 
-                <span>MONTRA</span>
+    <button
+        type="button"
+        class="menu-toggle"
+        id="menuToggle"
+        aria-label="Open navigation"
+        aria-controls="mobileMenu"
+        aria-expanded="false"
+    >
+        <span></span>
+        <span></span>
+        <span></span>
+    </button>
 
-            </a>
-
-
-            <nav class="nav">
-
-                <a href="home.html">Home</a>
-
-                <a href="about.html" class="active">About</a>
-
-                <a href="contact.html">Contact</a>
-
-                <a href="login.html" class="get-started">
-                    Get Started
-                </a>
-
-            </nav>
-
-
-            <button
-                class="menu-toggle"
-                id="menuToggle"
-                aria-label="Open navigation"
-            >
-
-                <span></span>
-                <span></span>
-                <span></span>
-
-            </button>
-
-        </div>
+</div>
 
     </header>
 
 
-    <div class="mobile-menu" id="mobileMenu">
+    <div class="mobile-menu" id="mobileMenu" aria-label="Mobile navigation">
 
-        <a href="home.html">Home</a>
+        <a href="index.html">Home</a>
 
-        <a href="about.html">About</a>
+        <a href="about.html" class="active" aria-current="page">About</a>
 
         <a href="contact.html">Contact</a>
 
         <a href="login.html" class="mobile-get-started">
-            Get Started
+            Login
         </a>
 
     </div>
@@ -82,10 +72,7 @@
     <main>
 
         <section class="about-hero">
-                   
-            <div class="about-hero-bg"> </div>
-
-            <div class="hero-layout">
+     
                <div class="hero-copy">
                   <h1>
                       A simpler way to
@@ -98,12 +85,7 @@
                       easy to understand.
                   </p>
                </div>
-
-               <div class="hero-image">
-                 <img src="about.jpg"
-                 alt="Montra personal finance dashboard illustration">
-               </div>
-            </div>
+     
             
 
         </section>
@@ -313,7 +295,7 @@
 
             <div class="footer-brand">
 
-                <a href="home.html" class="logo footer-logo">
+                <a href="index.html" class="logo footer-logo">
                         <img src="montra.png" alt="Montra logo">
                         <span>MONTRA</span>
                 </a>
@@ -330,7 +312,7 @@
 
             <div class="footer-links">
 
-                <a href="home.html">
+                <a href="index.html">
                     Home
                 </a>
 
@@ -376,7 +358,7 @@
         </div>
 
     </footer>
-
+    <script src="about.js"></script>
 
 </body>
 
