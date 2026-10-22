@@ -1,13 +1,47 @@
 const links = document.querySelectorAll("[data-view]");
 const views = document.querySelectorAll(".view-panel");
-const currencyFormatter = new Intl.NumberFormat("en-US", {
-  style: "currency",
-  currency: "USD"
-});
+const currencyLocales = { USD: "en-US", NGN: "en-NG" };
+const settingsForm = document.getElementById("settingsForm");
+const settingsStatus = document.getElementById("settingsStatus");
+const currencySetting = document.getElementById("currencySetting");
+const emailUpdatesSetting = document.getElementById("emailUpdatesSetting");
+const weeklyReportSetting = document.getElementById("weeklyReportSetting");
+let currencyFormatter;
 const percentageFormatter = new Intl.NumberFormat("en-US", {
   style: "percent",
   maximumFractionDigits: 1
 });
+
+let savedSettings = {};
+try {
+  const parsedSettings = JSON.parse(localStorage.getItem("dashboardSettings") || "{}");
+  if (parsedSettings && typeof parsedSettings === "object" && !Array.isArray(parsedSettings)) {
+    savedSettings = parsedSettings;
+  }
+} catch (error) {
+  console.error("Could not read saved dashboard settings.", error);
+}
+
+const selectedCurrency = Object.hasOwn(currencyLocales, savedSettings.currency)
+  ? savedSettings.currency
+  : "USD";
+currencySetting.value = selectedCurrency;
+emailUpdatesSetting.checked = typeof savedSettings.emailUpdates === "boolean"
+  ? savedSettings.emailUpdates
+  : true;
+weeklyReportSetting.checked = typeof savedSettings.weeklyReport === "boolean"
+  ? savedSettings.weeklyReport
+  : false;
+
+function updateCurrencyFormatter() {
+  const currency = currencySetting.value;
+  currencyFormatter = new Intl.NumberFormat(currencyLocales[currency], {
+    style: "currency",
+    currency
+  });
+}
+
+updateCurrencyFormatter();
 
 let transactions = [];
 try {
@@ -173,6 +207,17 @@ links.forEach((link) => link.addEventListener("click", (event) => {
   document.getElementById("pageTitle").textContent = view.dataset.title;
   document.getElementById("dashboardSubtitle").textContent = view.dataset.subtitle;
 }));
+
+settingsForm.addEventListener("change", () => {
+  updateCurrencyFormatter();
+  localStorage.setItem("dashboardSettings", JSON.stringify({
+    currency: currencySetting.value,
+    emailUpdates: emailUpdatesSetting.checked,
+    weeklyReport: weeklyReportSetting.checked
+  }));
+  renderDashboard();
+  settingsStatus.textContent = "Settings saved.";
+});
 
 const userInfoForm = document.getElementById("userInfoForm");
 const userInfoStatus = document.getElementById("userInfoStatus");

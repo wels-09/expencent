@@ -10,7 +10,9 @@
   
   <aside class="sidebar">
     <div class="sidebar-brand">
-      <h2>DashApp</h2>
+      <button class="profile-button" type="button" data-view="users" aria-label="Open profile">
+        <img src="profile.jfif" alt="">
+      </button>
     </div>
     <nav class="sidebar-menu">
       <ul>
@@ -18,8 +20,8 @@
         <li><a href="#analytics" data-view="analytics">Analytics</a></li>
         <li><a href="#history" data-view="history">History</a></li>
         <!-- <li><a href="#aprofilesettings" data-view="profilesettings">Profile settings / Account Settings </a></li> -->
-        <li><a href="#users" data-view="users">Users</a></li>
         <li><a href="#settings" data-view="settings">Settings</a></li>
+        <li><a href="#settings" data-view="settings">Log-Out</a></li>
       </ul>
     </nav>
   </aside>
@@ -36,7 +38,7 @@
     <section class="view-panel" id="dashboardView" data-title="Finance Dashboard" data-subtitle="Track your monthly activities">
       <section class="summary-grid" aria-label="Account totals">
         <article class="summary-card balance-card">
-          <p class="card-label">Current balance</p>
+          <p class="card-label" style="color: gray;">Current balance</p>
           <h2 id="balanceTotal">$0.00</h2>
         </article>
         <article class="summary-card">
@@ -109,7 +111,7 @@
       </section>
     </section>
 
-    <section class="view-panel section-view" id="usersView" data-title="Users" data-subtitle="Manage account access" hidden>
+    <section class="view-panel section-view" id="usersView" data-title="Profile" data-subtitle="Manage your personal information" hidden>
       <section class="content-body">
         <h2>Your information</h2>
         <form id="userInfoForm" class="user-info-form">
@@ -136,11 +138,24 @@
     <section class="view-panel section-view" id="settingsView" data-title="Settings" data-subtitle="Manage your account preferences" hidden>
       <section class="content-body">
         <h2>Preferences</h2>
-        <ul class="transaction-list">
-          <li><span>Currency</span><strong>USD</strong></li>
-          <li><span>Email updates</span><strong>On</strong></li>
-          <li><span>Weekly report</span><strong>Off</strong></li>
-        </ul>
+        <form id="settingsForm" class="settings-form">
+          <label for="currencySetting">Display currency</label>
+          <select id="currencySetting" name="currency">
+            <option value="USD">US dollar (USD)</option>
+            <option value="NGN">Nigerian naira (NGN)</option>
+          </select>
+          <p class="settings-note">Changing the display currency does not convert transaction amounts.</p>
+
+          <label class="settings-toggle" for="emailUpdatesSetting">
+            <input id="emailUpdatesSetting" name="emailUpdates" type="checkbox">
+            Email updates
+          </label>
+          <label class="settings-toggle" for="weeklyReportSetting">
+            <input id="weeklyReportSetting" name="weeklyReport" type="checkbox">
+            Weekly report
+          </label>
+          <p id="settingsStatus" class="settings-status" role="status" aria-live="polite"></p>
+        </form>
       </section>
     </section>
 
@@ -156,4 +171,3 @@
 <script src="Dashboard.js"></script>
 </body>           
 </html>
-
