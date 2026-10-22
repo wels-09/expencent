@@ -17,36 +17,39 @@
 <body>
 
     <header class="header">
-        <div class="container nav-container">
+       
+<div class="container nav-container">
 
-            <a href="home.html" class="logo">
-                <img src="montra.jpg" alt="Montra logo">
-                <span>Montra</span>
-            </a>
+    <a href="index.html" class="logo">
+        <img src="montra.png" alt="Montra logo">
+        <span>MONTRA</span>
+    </a>
 
-            <nav class="nav" id="desktopNav">
-                <a href="home.html">Home</a>
-                <a href="about.html">About</a>
-                <a href="contact.html" class="active">Contact</a>
-                <a href="login.html" class="nav-cta">Get Started</a>
-            </nav>
+    <nav class="nav">
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="contact.html" class="active">Contact</a>
+        <a href="login.html" class="get-started">Get Started</a>
+    </nav>
 
-            <button
-                class="menu-toggle"
-                id="menuToggle"
-                aria-label="Toggle navigation"
-                aria-expanded="false"
-                aria-controls="mobileMenu"
-                type="button"
-            >
-                <span></span>
-                <span></span>
-                <span></span>
-            </button>
-        </div>
+    <button
+        type="button"
+        class="menu-toggle"
+        id="menuToggle"
+        aria-label="Open navigation"
+        aria-controls="mobileMenu"
+        aria-expanded="false"
+    >
+        <span></span>
+        <span></span>
+        <span></span>
+    </button>
+
+</div>
+
 
         <nav class="mobile-menu" id="mobileMenu" aria-label="Mobile navigation">
-            <a href="home.html">Home</a>
+            <a href="index.html">Home</a>
             <a href="about.html">About</a>
             <a href="contact.html" class="active">Contact</a>
             <a href="login.html" class="mobile-cta">Get Started</a>
@@ -55,22 +58,29 @@
 
     <main>
         <section class="contact-hero">
-            <div class="hero-decoration decoration-one"></div>
-            <div class="hero-decoration decoration-two"></div>
+
 
             <div class="container hero-content">
-                <span class="eyebrow">WE'RE HERE TO HELP</span>
+                 <div class="hero-layout">
+                    <div class="hero-copy">
+                       <h1>
+                            Let's talk about
+                           <span>your finances.</span>
+                       </h1>
 
-                <h1>
-                    Let's talk about
-                    <span>your finances.</span>
-                </h1>
+                       <p>
+                         Have a question, suggestion, or feedback
+                         about Montra? We'd love to hear from you.
+                         Send us a message and let's make 
+                         managing your expenses easier.
+                       </p>
+                    </div>
 
-                <p>
-                    Have a question, suggestion, or feedback about Montra?
-                    We'd love to hear from you. Send us a message and
-                    let's make managing your expenses easier.
-                </p>
+                    <div class="hero-image">
+                      <img src="contact.jpg"
+                      alt="Montra personal finance dashboard illustration">
+                    </div>
+                 </div>
             </div>
         </section>
 
@@ -79,7 +89,6 @@
             <div class="container contact-grid">
 
                 <div class="contact-info">
-                    <span class="eyebrow">GET IN TOUCH</span>
 
                     <h2>We'd love to hear from you.</h2>
 
@@ -224,7 +233,6 @@
 
                         <button type="submit" class="submit-button">
                             Send Message
-                            <span aria-hidden="true">→</span>
                         </button>
 
                         <p class="form-feedback" id="formFeedback" role="status"></p>
@@ -240,9 +248,9 @@
         <div class="container footer-main">
 
             <div class="footer-brand">
-                <a href="home.html" class="logo footer-logo">
-                    <img src="montra.jpg" alt="">
-                    <span>Montra</span>
+                <a href="index.html" class="logo footer-logo">
+                    <img src="montra.png" alt="">
+                    <span>MONTRA</span>
                 </a>
 
                 <p>
@@ -252,28 +260,32 @@
             </div>
 
             <div class="footer-navigation">
-                <h3>Quick Links</h3>
-                <a href="home.html">Home</a>
+                <a href="index.html">Home</a>
                 <a href="about.html">About</a>
                 <a href="contact.html">Contact</a>
             </div>
 
-            <div class="footer-navigation">
-                <h3>Account</h3>
-                <a href="login.html">Log In</a>
-                <a href="login.html">Get Started</a>
+            <div class="social-links">
+
+                <a href="#">f</a>
+
+                <a href="#">𝕏</a>
+
+                <a href="#">◎</a>
+
+                <a href="#">in</a>
+
             </div>
 
         </div>
 
         <div class="footer-bottom">
             <div class="container footer-bottom-content">
-                <p>&copy; 2026 Montra. All rights reserved.</p>
-                <p>Made to make money management simpler.</p>
+                <p>&copy; 2026 MONTRA. All rights reserved.</p>
             </div>
         </div>
     </footer>
 
-
+    <script src="contact.js"></script>
 </body>
 </html>

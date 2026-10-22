@@ -1,0 +1,169 @@
+document.addEventListener("DOMContentLoaded", () => {
+
+    const signupForm = document.getElementById("signupForm");
+    const fullName = document.getElementById("fullName");
+    const email = document.getElementById("email");
+    const password = document.getElementById("password");
+    const confirmPassword = document.getElementById("confirmPassword");
+    const togglePassword = document.querySelectorAll(".toggle-password");
+    const terms = document.getElementById("terms");
+    const formMessage = document.getElementById("formMessage");
+
+    function errorMessage(message, type) {
+        formMessage.textContent = message;
+        formMessage.className = `form-message ${type}`;
+    }
+
+    togglePassword.forEach((button) => {
+        button.addEventListener("click", () => {
+
+            const targetId = button.dataset.target;
+            const targetInput = document.getElementById(targetId);
+
+            if (!targetInput) return;
+
+            if (targetInput.type === "password") {
+                targetInput.type = "text";
+                button.textContent = "Hide";
+                button.setAttribute("aria-label", "Hide password");
+            } else {
+                targetInput.type = "password";
+                button.textContent = "Show";
+                button.setAttribute("aria-label", "Show password");
+            }
+        });
+    });
+
+    
+    signupForm.addEventListener("submit", (event) => {
+        event.preventDefault();
+
+        
+        const userName = fullName.value.trim();
+        const userEmail = email.value.trim().toLowerCase();
+        const userPassword = password.value;
+        const userConfirmPassword = confirmPassword.value;
+
+        
+        if (userName.length < 4) {
+            errorMessage(
+                "Full name should be at least 4 characters.",
+                "error"
+            );
+            fullName.focus();
+            return;
+        }
+
+    
+        email.value = userEmail;
+
+        if (!email.checkValidity() || userEmail === "") {
+            errorMessage(
+                "Please enter a valid email address.",
+                "error"
+            );
+            email.focus();
+            return;
+        }
+
+        // Validate password length
+        if (userPassword.length < 8) {
+            errorMessage(
+                "Password must be at least 8 characters.",
+                "error"
+            );
+            password.focus();
+            return;
+        }
+
+        // Confirm password
+        if (userPassword !== userConfirmPassword) {
+            errorMessage(
+                "Passwords do not match.",
+                "error"
+            );
+            confirmPassword.focus();
+            return;
+        }
+
+        // Check terms and conditions
+        if (!terms.checked) {
+            errorMessage(
+                "Please agree to the terms and conditions.",
+                "error"
+            );
+            terms.focus();
+            return;
+        }
+
+        let users = [];
+
+        try {
+            users = JSON.parse(
+                localStorage.getItem("montraUsers") || "[]"
+            );
+
+            if (!Array.isArray(users)) {
+                errorMessage(
+                    "Stored user data is invalid.",
+                    "error"
+                );
+                return;
+            }
+        } catch (error) {
+            errorMessage(
+                "Cannot access stored user data.",
+                "error"
+            );
+            return;
+        }
+
+        const existingUser = users.find(
+            (user) => user.email === userEmail
+        );
+
+        if (existingUser) {
+            errorMessage(
+                "This email already exists.",
+                "error"
+            );
+            email.focus();
+            return;
+        }
+
+        const newUser = {
+            id: Date.now().toString(),
+            fullName: userName,
+            email: userEmail,
+            password: userPassword,
+            createdAt: new Date().toISOString()
+        };
+
+        try {
+            users.push(newUser);
+
+            localStorage.setItem(
+                "montraUsers",
+                JSON.stringify(users)
+            );
+        } catch (error) {
+            errorMessage(
+                "Could not save your account. Please try again.",
+                "error"
+            );
+            return;
+        }
+
+        errorMessage(
+            "You have successfully created an account!",
+            "success"
+        );
+
+        signupForm.reset();
+        setTimeout(() => {
+            window.location.href = "login.html";
+        },  1500);
+
+    });
+
+});
