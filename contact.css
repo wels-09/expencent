@@ -186,21 +186,11 @@ textarea:focus-visible {
     isolation: isolate;
     overflow: hidden;
 
-    display: flex;
-    align-items: center;
 
     /* min-height instead of fixed height so content is never clipped */
     min-height: calc(100vh - var(--header-h));
     min-height: calc(100svh - var(--header-h));
     padding: 75px 0;
-
-    background:
-        linear-gradient(
-            90deg,
-            rgba(238, 250, 245, 0.97),
-            rgba(238, 250, 245, 0.75)
-        ),
-        url("background.jpg");
 
     background-size: cover;
     background-position: center;
@@ -244,6 +234,8 @@ textarea:focus-visible {
     display: flex;
     align-items: center;
     justify-content: center;
+    border-radius: 18px;
+    background: var(--primary-light);
 }
 
 .hero-image img {
@@ -251,7 +243,8 @@ textarea:focus-visible {
     width: 100%;
     max-width: 500px;
     max-height: 460px;
-    object-fit: contain;
+    object-fit: cover;
+    border-radius: 18px;
 }
 
 

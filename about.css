@@ -167,43 +167,25 @@ button:focus-visible {
     position: relative;
     isolation: isolate;
     overflow: hidden;
-
+    background: #F5FAF8;
     display: flex;
     align-items: center;
-
+    justify-content: center;
     /* min-height instead of height: 100vh so content is never clipped */
     min-height: calc(100vh - var(--header-h));
     min-height: calc(100svh - var(--header-h));
     padding: 75px 0;
 
-    background:
-        linear-gradient(
-            90deg,
-            rgba(238, 250, 245, 0.97),
-            rgba(238, 250, 245, 0.75)
-        ),
-        url("background.jpg");
-
-    background-size: cover;
-    background-position: center;
-}
-
-.hero-layout {
-    display: grid;
-    grid-template-columns: 1.05fr 0.95fr;
-    align-items: center;
-    gap: 40px;
-    width: 100%;
-    padding: 4%;
 }
 
 .hero-copy {
     min-width: 0;
+    text-align: center;
 }
 
 .hero-copy h1 {
     max-width: 750px;
-    font-size: clamp(48px, 5.5vw, 62px);
+    font-size: clamp(60px, 7.5vw, 72px);
     font-weight: 800;
     line-height: 1.05;
     letter-spacing: -2.5px;
@@ -215,26 +197,11 @@ button:focus-visible {
 }
 
 .hero-copy p {
-    max-width: 540px;
+ 
     margin-top: 22px;
     font-size: 16px;
     line-height: 1.7;
     color: #697386;
-}
-
-.hero-image {
-    min-width: 0;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.hero-image img {
-    display: block;
-    width: 100%;
-    max-width: 500px;
-    max-height: 460px;
-    object-fit: contain;
 }
 
 .btn {
