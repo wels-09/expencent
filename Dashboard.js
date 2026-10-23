@@ -11,6 +11,28 @@ document.addEventListener("DOMContentLoaded", () => {
         return;
     }
 
+    const logoutBtn = document.getElementById("logoutBtn") 
+
+    if (logoutBtn) {
+        logoutBtn.addEventListener("click", (event) => {
+            event.preventDefault();
+
+            const confirmLogout = confirm(
+                "Are you sure you want to log out?"
+            );
+
+            if (!confirmLogout) {
+                return;
+            }
+
+            // Clear the current login session
+            localStorage.removeItem("montraCurrentUser");
+
+            // Redirect to the login page
+            window.location.href = "login.html";
+        })
+    }
+
     alert(`Welcome back, ${currentUser.fullName || "User"}!`);
 
     const userId = String(currentUser.id);
