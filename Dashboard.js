@@ -11,6 +11,12 @@ document.addEventListener("DOMContentLoaded", () => {
         return;
     }
 
+    const sidebarUserName = document.getElementById("sidebarUserName");
+
+    if (sidebarUserName) {
+        sidebarUserName.textContent = currentUser.fullName || "User";
+    }
+
     const logoutBtn = document.getElementById("logoutBtn") 
 
     if (logoutBtn) {
@@ -25,10 +31,8 @@ document.addEventListener("DOMContentLoaded", () => {
                 return;
             }
 
-            // Clear the current login session
             localStorage.removeItem("montraCurrentUser");
 
-            // Redirect to the login page
             window.location.href = "login.html";
         })
     }
