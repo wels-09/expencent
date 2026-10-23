@@ -1,65 +1,36 @@
-const links = document.querySelectorAll("[data-view]");
-const views = document.querySelectorAll(".view-panel");
-const currencyLocales = { USD: "en-US", NGN: "en-NG" };
-const settingsForm = document.getElementById("settingsForm");
-const settingsStatus = document.getElementById("settingsStatus");
-const currencySetting = document.getElementById("currencySetting");
-const emailUpdatesSetting = document.getElementById("emailUpdatesSetting");
-const weeklyReportSetting = document.getElementById("weeklyReportSetting");
-let currencyFormatter;
-const percentageFormatter = new Intl.NumberFormat("en-US", {
-  style: "percent",
-  maximumFractionDigits: 1
-});
 
-let savedSettings = {};
-try {
-  const parsedSettings = JSON.parse(localStorage.getItem("dashboardSettings") || "{}");
-  if (parsedSettings && typeof parsedSettings === "object" && !Array.isArray(parsedSettings)) {
-    savedSettings = parsedSettings;
-  }
-} catch (error) {
-  console.error("Could not read saved dashboard settings.", error);
-}
+document.addEventListener("DOMContentLoaded", () => {
 
-const selectedCurrency = Object.hasOwn(currencyLocales, savedSettings.currency)
-  ? savedSettings.currency
-  : "USD";
-currencySetting.value = selectedCurrency;
-emailUpdatesSetting.checked = typeof savedSettings.emailUpdates === "boolean"
-  ? savedSettings.emailUpdates
-  : true;
-weeklyReportSetting.checked = typeof savedSettings.weeklyReport === "boolean"
-  ? savedSettings.weeklyReport
-  : false;
 
-function updateCurrencyFormatter() {
-  const currency = currencySetting.value;
-  currencyFormatter = new Intl.NumberFormat(currencyLocales[currency], {
-    style: "currency",
-    currency
-  });
-}
-
-updateCurrencyFormatter();
-
-let transactions = [];
-try {
-  const storedTransactions = JSON.parse(localStorage.getItem("dashboardTransactions") || "[]");
-  if (Array.isArray(storedTransactions)) {
-    transactions = storedTransactions.filter((transaction) =>
-      transaction &&
-      (transaction.type === "income" || transaction.type === "expense") &&
-      Number.isFinite(Number(transaction.amount)) &&
-      Number(transaction.amount) > 0 &&
-      typeof transaction.category === "string" &&
-      typeof transaction.description === "string" &&
-      typeof transaction.date === "string"
+    const currentUser = JSON.parse(
+        localStorage.getItem("montraCurrentUser") || "null"
     );
 
     if (!currentUser || !currentUser.id || !currentUser.email) {
         window.location.href = "login.html";
         return;
+    }
+
+    const logoutBtn = document.getElementById("logoutBtn") 
+
+    if (logoutBtn) {
+        logoutBtn.addEventListener("click", (event) => {
+            event.preventDefault();
+
+            const confirmLogout = confirm(
+                "Are you sure you want to log out?"
+            );
+
+            if (!confirmLogout) {
+                return;
+            }
+
+            // Clear the current login session
+            localStorage.removeItem("montraCurrentUser");
+
+            // Redirect to the login page
+            window.location.href = "login.html";
+        })
     }
 
     alert(`Welcome back, ${currentUser.fullName || "User"}!`);
@@ -78,20 +49,7 @@ try {
     });
 
 
-settingsForm.addEventListener("change", () => {
-  updateCurrencyFormatter();
-  localStorage.setItem("dashboardSettings", JSON.stringify({
-    currency: currencySetting.value,
-    emailUpdates: emailUpdatesSetting.checked,
-    weeklyReport: weeklyReportSetting.checked
-  }));
-  renderDashboard();
-  settingsStatus.textContent = "Settings saved.";
-});
-
-const userInfoForm = document.getElementById("userInfoForm");
-const userInfoStatus = document.getElementById("userInfoStatus");
-const savedUserInfo = JSON.parse(localStorage.getItem("dashboardUserInfo") || "{}");
+    let allTransactions = [];
 
     try {
         const savedTransactions = JSON.parse(

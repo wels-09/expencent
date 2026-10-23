@@ -64,6 +64,17 @@ body {
   margin: 8px 8px;
 }
 
+.burger-menu{
+  display: none;
+   
+  height: 50px;
+  width: 20%;
+  & img{
+    height: 100%;
+    width: 100%;
+  }
+}
+
  
 .sidebar-menu a:hover, 
 .sidebar-menu a.active {
@@ -275,6 +286,11 @@ body {
  }
 
 
+.historyT{
+ 
+  height: 350px;
+}
+
 .card-label { 
   margin-bottom: 8px; 
   color: #64748b; 
@@ -331,6 +347,32 @@ body {
   transform: translateY(-3px);
   box-shadow: 0 18px 36px rgba(15, 23, 42, 0.13);
 }
+
+
+#logoutBtn {
+    display: block;
+    padding: 12px 16px;
+    color: #DC2626;
+    text-decoration: none;
+    border-radius: 8px;
+    font-size: 15px;
+    font-weight: 500;
+    transition: background-color 0.3s ease,
+                color 0.3s ease;
+}
+
+
+#logoutBtn:hover {
+    background-color: #FEE2E2;
+    color: #991B1B;
+}
+
+
+#logoutBtn:focus-visible {
+    outline: 2px solid #DC2626;
+    outline-offset: 3px;
+}
+
 
 @keyframes fade-in-up {
   from {
@@ -655,7 +697,7 @@ body {
   display: none;
 }
 
-@media (max-width: 600px) {
+@media (max-width: 700px) {
   .summary-grid {
     grid-template-columns: minmax(0, 1fr);
   }
@@ -668,6 +710,17 @@ body {
     grid-column: auto;
   }
 
+  .burger-menu{
+    display: block;
+      height: 50px;
+  width: 20%;
+  & img{
+    height: 100%;
+    width: 100%;
+  }
+}
+  
+/* 
   .dashboard {
      height: auto;
       min-height: 100vh;
@@ -679,8 +732,43 @@ body {
 
   .sidebar {
      width: 100%; 
-    }
+    } */
 
+  .sidebar {
+  height: 100%;
+  width: 260px;
+  background-color: #fff;
+  color: #1e293b;
+  display: flex;
+  flex-direction: column;
+  width: 220px;
+  border-radius: 28px;
+  box-shadow: 0 18px 40px rgba(15, 23, 42, 0.12);
+  
+}
+
+.sidebar-brand {
+  padding: 24px;
+  border-bottom: 1px solid #e2e8f0;
+}
+
+.sidebar-menu {
+  padding: 16px 0;
+}
+
+.sidebar-menu ul {
+  list-style: none;
+}
+
+.sidebar-menu a {
+  display: block;
+  padding: 14px 24px;
+  color: #64748b;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  margin: 8px 8px;
+}
+ 
   .main-content {
      width: 100%;
       height: auto;
@@ -700,6 +788,8 @@ body {
   #todayContentitem {
      flex-wrap: wrap;
      }
+
+     
   .stat {
      min-width: 40%; 
     }
