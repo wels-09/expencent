@@ -720,7 +720,12 @@ body {
   }
 }
   
-/* 
+
+.historyT{
+ 
+  height: 270px;
+}
+
   .dashboard {
      height: auto;
       min-height: 100vh;
@@ -732,8 +737,8 @@ body {
 
   .sidebar {
      width: 100%; 
-    } */
-
+    }
+/* 
   .sidebar {
   height: 100%;
   width: 260px;
@@ -767,7 +772,7 @@ body {
   text-decoration: none;
   transition: all 0.3s ease;
   margin: 8px 8px;
-}
+} */
  
   .main-content {
      width: 100%;
