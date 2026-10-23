@@ -19,7 +19,7 @@
 
         <div class="container nav-container">
 
-            <a href="home.html" class="logo">
+            <a href="index.html" class="logo">
                <img src="montra.png" alt="Montra logo">
                <span>MONTRA</span>
             </a>
@@ -27,7 +27,7 @@
 
             <nav class="nav">
 
-                <a href="home.html" class="active">Home</a>
+                <a href="index.html" class="active" aria-current="page">Home</a>
 
                 <a href="about.html">About</a>
 
@@ -39,7 +39,14 @@
 
             </nav>
 
-            <button class="menu-toggle" id="menuToggle" aria-label="Open navigation">
+            <button
+                type="button"
+                class="menu-toggle"
+                id="menuToggle"
+                aria-label="Open navigation"
+                aria-controls="mobileMenu"
+                aria-expanded="false"
+            >
                 <span></span>
                 <span></span>
                 <span></span>
@@ -51,9 +58,9 @@
 
 
 
-    <div class="mobile-menu" id="mobileMenu">
+    <nav class="mobile-menu" id="mobileMenu" aria-label="MObile navigation">
 
-        <a href="home.html">Home</a>
+        <a href="index.html" class="active" aria-current="page">Home</a>
 
         <a href="about.html">About</a>
 
@@ -63,7 +70,7 @@
             Get Started
         </a>
 
-    </div>
+    </nav>
 
     <main>
 
@@ -635,7 +642,7 @@
 
             <div class="footer-brand">
 
-                <a href="home.html" class="logo footer-logo">
+                <a href="index.html" class="logo footer-logo">
 
                     <img src="montra.png" alt="Montra logo">
                     <span>MONTRA</span>
@@ -653,7 +660,7 @@
             <div class="footer-links">
 
                 <div>
-                    <a href="home.html">Home</a>
+                    <a href="index.html">Home</a>
                     <a href="about.html">About</a>
                     <a href="contact.html">Contact</a>
                 </div>
@@ -686,6 +693,6 @@
         </div>
 
     </footer>
-
+    <script src="home.js"></script>
 </body>
 </html>

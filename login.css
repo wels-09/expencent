@@ -287,7 +287,7 @@ a:focus-visible {
 
 /* Form feedback */
 
-.form-message {
+/* .form-message {
     display: none;
     margin-top: 15px;
     color: var(--primary-dark);
@@ -297,6 +297,32 @@ a:focus-visible {
 
 .form-message.visible {
     display: block;
+} */
+
+.form-message {
+    display: block;
+    margin-top: 12px;
+    padding: 0;
+    font-size: 14px;
+    line-height: 1.5;
+}
+
+.form-message:empty {
+    display: none;
+}
+
+.form-message.error {
+    color: #c62828;
+    background: #fff0f0;
+    padding: 12px;
+    border-radius: 8px;
+}
+
+.form-message.success {
+    color: #176b38;
+    background: #e8f8ee;
+    padding: 12px;
+    border-radius: 8px;
 }
 
 /* Footer */

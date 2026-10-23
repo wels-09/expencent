@@ -1,8 +1,5 @@
-
-
 document.addEventListener("DOMContentLoaded", () => {
 
-    // Select HTML elements
     const signupForm = document.getElementById("signupForm");
     const fullName = document.getElementById("fullName");
     const email = document.getElementById("email");
@@ -12,13 +9,11 @@ document.addEventListener("DOMContentLoaded", () => {
     const terms = document.getElementById("terms");
     const formMessage = document.getElementById("formMessage");
 
-    // Display messages
     function errorMessage(message, type) {
         formMessage.textContent = message;
         formMessage.className = `form-message ${type}`;
     }
 
-    // Show or hide password
     togglePassword.forEach((button) => {
         button.addEventListener("click", () => {
 
@@ -39,17 +34,17 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     });
 
-    // Handle form submission
+    
     signupForm.addEventListener("submit", (event) => {
         event.preventDefault();
 
-        // Get user input
+        
         const userName = fullName.value.trim();
         const userEmail = email.value.trim().toLowerCase();
         const userPassword = password.value;
         const userConfirmPassword = confirmPassword.value;
 
-        // Validate full name
+        
         if (userName.length < 4) {
             errorMessage(
                 "Full name should be at least 4 characters.",
@@ -59,7 +54,7 @@ document.addEventListener("DOMContentLoaded", () => {
             return;
         }
 
-        // Validate email
+    
         email.value = userEmail;
 
         if (!email.checkValidity() || userEmail === "") {
@@ -101,7 +96,6 @@ document.addEventListener("DOMContentLoaded", () => {
             return;
         }
 
-        // Load existing users
         let users = [];
 
         try {
@@ -124,7 +118,6 @@ document.addEventListener("DOMContentLoaded", () => {
             return;
         }
 
-        // Check whether email already exists
         const existingUser = users.find(
             (user) => user.email === userEmail
         );
@@ -138,7 +131,6 @@ document.addEventListener("DOMContentLoaded", () => {
             return;
         }
 
-        // Create new user
         const newUser = {
             id: Date.now().toString(),
             fullName: userName,
@@ -147,7 +139,6 @@ document.addEventListener("DOMContentLoaded", () => {
             createdAt: new Date().toISOString()
         };
 
-        // Save user
         try {
             users.push(newUser);
 
@@ -163,7 +154,6 @@ document.addEventListener("DOMContentLoaded", () => {
             return;
         }
 
-        // Success
         errorMessage(
             "You have successfully created an account!",
             "success"
