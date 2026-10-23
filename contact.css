@@ -235,7 +235,7 @@ textarea:focus-visible {
     align-items: center;
     justify-content: center;
     border-radius: 18px;
-    background: var(--primary-light);
+ 
 }
 
 .hero-image img {
